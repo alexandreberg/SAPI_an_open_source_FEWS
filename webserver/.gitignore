@@ -1,0 +1,37 @@
+# ============================================================
+# CREDENTIAL FILES — NEVER COMMIT REAL CREDENTIALS
+# ============================================================
+
+# Real DB config (used by receive-data.php)
+private_configs/sapi/db_config.php
+
+# Real DB credentials (used by web UI via functions.php)
+private_configs/sapi.php
+
+# Real cron credentials
+cron/credenciais.php
+
+# Real SMTP credentials (never commit — copy from mail_config-sample.php)
+private_configs/sapi/mail_config.php
+
+# Real API config
+private_configs/sapi/api_config.php
+
+# ============================================================
+# GENERATED / RUNTIME FILES
+# ============================================================
+
+# Composer dependencies (install with: composer install from AppTest/webserver/)
+vendor/
+public_html/sapi/sensorData/vendor/
+cron/vendor/
+
+# PHP error logs
+public_html/sapi/sensorData/error.log
+public_html/sapi/error.log
+cron/cron_log.txt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp

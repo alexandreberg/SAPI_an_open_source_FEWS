@@ -1,0 +1,2 @@
+# Keep directory but ignore generated chart PNGs
+*.png

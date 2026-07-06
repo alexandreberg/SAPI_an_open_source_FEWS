@@ -1,0 +1,10 @@
+{
+    "name": "sapi/cron",
+    "description": "SAPI alert cron dependencies",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

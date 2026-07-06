@@ -1,0 +1,19 @@
+{
+    "name": "alexandreberg/lora-gateway-server",
+    "description": "Server-side receiver for IoT sensor data via MessagePack",
+    "type": "project",
+    "require": {
+        "php": ">=7.2",
+        "rybakit/msgpack": "^0.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "authors": [
+        {
+            "name": "Alexandre Nuernberg",
+            "email": "alexandreberg@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

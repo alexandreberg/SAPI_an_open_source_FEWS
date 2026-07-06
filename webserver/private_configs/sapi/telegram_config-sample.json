@@ -1,0 +1,18 @@
+{
+  "_comment": "SAPI Telegram Bot configuration — Issue #110",
+  "_instructions": [
+    "1. Create a bot via @BotFather on Telegram and copy the token below.",
+    "2. For each recipient: open a chat with the bot, send /start, then call",
+    "   https://api.telegram.org/bot<TOKEN>/getUpdates to find the chat_id.",
+    "   For a group: add the bot to the group, send a message, then call getUpdates.",
+    "3. Copy this file to the production location on the RPi:",
+    "   /home/ilha3d/SAPI/LightGBM_Production/config/telegram_config.json",
+    "4. Restrict permissions: chmod 600 telegram_config.json",
+    "5. NEVER commit the real file — it is gitignored at runtime."
+  ],
+  "bot_token": "REPLACE_WITH_BOTFATHER_TOKEN",
+  "chat_ids": [
+    "REPLACE_WITH_CHAT_ID_1",
+    "REPLACE_WITH_CHAT_ID_2"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "name": "sapi/webserver",
+    "description": "SAPI web application dependencies",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

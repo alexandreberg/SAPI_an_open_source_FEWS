@@ -1,0 +1,3 @@
+# Belt-and-suspenders: disable directory listing inside /admin/
+# The PHP session guard (_auth.php) is the primary protection.
+Options -Indexes
