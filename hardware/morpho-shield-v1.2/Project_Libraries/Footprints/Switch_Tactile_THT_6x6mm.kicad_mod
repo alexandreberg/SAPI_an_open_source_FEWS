@@ -1,0 +1,239 @@
+(footprint "Switch_Tactile_THT_6x6mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English")
+	(property "Reference" "REF**"
+		(at 3.81 -2.3368 0)
+		(layer "F.SilkS")
+		(uuid "78a14944-9c0f-4100-9ea6-6413d241de68")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Switch_Tactile_THT_6x6mm"
+		(at 3.6322 7.0866 0)
+		(layer "F.Fab")
+		(uuid "0b151f2a-e13a-4173-8295-b18d9fc8ff7d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f7175e02-4e40-4d36-b7ea-d5f86b383d92")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e9bad752-f1a6-4675-afc7-64600968819a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 0.2032 1.1938)
+		(end 0.2032 3.302)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3528b85c-073c-424d-b168-7c3913de5e10")
+	)
+	(fp_line
+		(start 0.2032 1.2004)
+		(end -0.0468 1.2004)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "01e9f2dd-4c0d-41b4-bbd6-13051060d229")
+	)
+	(fp_line
+		(start 1.2 -1.0414)
+		(end 5.8674 -1.0414)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dd1936cc-0ca7-43d8-bdb8-42ecbc0a77a6")
+	)
+	(fp_line
+		(start 5.8928 5.5626)
+		(end 0.6 5.5528)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "71cfcca6-7a53-4643-9ba3-1ed210e02adf")
+	)
+	(fp_line
+		(start 6.3092 1.2048)
+		(end 6.3092 3.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3f2220c7-20e8-4e01-9ce9-f970f682ac37")
+	)
+	(fp_line
+		(start -1.35 -1.35)
+		(end -1.35 5.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2bc80971-6c03-4568-afb5-3e3d3110222a")
+	)
+	(fp_line
+		(start 7.85 -1.35)
+		(end -1.35 -1.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "42cbae49-d9ce-4665-a56c-7832ef7f8e99")
+	)
+	(fp_line
+		(start 7.85 -1.35)
+		(end 7.85 5.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0eaeed80-145e-4762-947f-0f67b68be95f")
+	)
+	(fp_line
+		(start 7.85 5.85)
+		(end -1.35 5.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ac8a8247-a636-451d-98a6-97204a58f467")
+	)
+	(fp_line
+		(start 0.25 -1)
+		(end 0.25 5.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "11961c09-06db-4af9-9168-75b269143807")
+	)
+	(fp_line
+		(start 0.25 -1)
+		(end 6.25 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "102844ab-4d34-4f96-8144-c4bb0abb2aa9")
+	)
+	(fp_line
+		(start 6.25 -1)
+		(end 6.25 5.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e78d5e16-a648-4d7e-814c-60f0a5120f4c")
+	)
+	(fp_line
+		(start 6.25 5.5)
+		(end 0.25 5.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ff751d83-b0c4-4d24-926f-c65e2e335250")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 3.3782 2.286 0)
+		(layer "F.Fab")
+		(uuid "6088be2f-8fc5-4f00-af2b-68093faa4b2c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8706f5c5-b25d-403a-b227-870e6cec8ad3")
+	)
+	(pad "2" thru_hole circle
+		(at 6.5 0)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "37a3b9ca-6ef3-426a-b366-e11f2f980da4")
+	)
+	(pad "3" thru_hole circle
+		(at 0 4.5)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a20c3a5d-632f-4099-b8c0-fb65bd5a6057")
+	)
+	(pad "4" thru_hole circle
+		(at 6.5 4.5)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4f173bc3-d7e4-4df0-ac87-b74226567729")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/Libraries/3D_Models/tactile-switches-1.snapshot.24/A06/A06-17.0.step"
+		(offset
+			(xyz 0.25 -5.2 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

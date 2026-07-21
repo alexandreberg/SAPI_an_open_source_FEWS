@@ -1,0 +1,248 @@
+(footprint "Ilha3d_Jumper_2Pins_closed"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
+	(tags "Through hole pin header THT 1x02 2.54mm single row")
+	(attr through_hole)
+	(property "Reference" "REF**"
+		(at 0 2.38 0)
+		(layer "F.SilkS")
+		(uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Ilha3d_Jumper_2Pins_closed"
+		(at 0 -5.0 0)
+		(layer "F.Fab")
+		(uuid "b2c3d4e5-f6a7-8901-bcde-f12345678901")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "~"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c3d4e5f6-a7b8-9012-cdef-123456789012")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Jumper, 2-pole, closed/bridged"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d4e5f6a7-b8c9-0123-defa-234567890123")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*")
+	(fp_line
+		(start -1.38 -3.92)
+		(end 1.38 -3.92)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e5f6a7b8-c9d0-1234-efab-345678901234")
+	)
+	(fp_line
+		(start -1.38 -3.92)
+		(end -1.38 -1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f6a7b8c9-d0e1-2345-fabc-456789012345")
+	)
+	(fp_line
+		(start -1.38 -1.27)
+		(end 1.38 -1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a7b8c9d0-e1f2-3456-abcd-567890123456")
+	)
+	(fp_line
+		(start -1.38 0)
+		(end -1.38 1.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b8c9d0e1-f2a3-4567-bcde-678901234567")
+	)
+	(fp_line
+		(start -1.38 1.38)
+		(end 0 1.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c9d0e1f2-a3b4-5678-cdef-789012345678")
+	)
+	(fp_line
+		(start 1.38 -3.92)
+		(end 1.38 -1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d0e1f2a3-b4c5-6789-defa-890123456789")
+	)
+	(fp_line
+		(start -1.77 -4.32)
+		(end 1.77 -4.32)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e1f2a3b4-c5d6-7890-efab-901234567890")
+	)
+	(fp_line
+		(start -1.77 -4.32)
+		(end -1.77 1.77)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f2a3b4c5-d6e7-8901-fabc-012345678901")
+	)
+	(fp_line
+		(start 1.77 -4.32)
+		(end 1.77 1.77)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a3b4c5d6-e7f8-9012-abcd-123456789012")
+	)
+	(fp_line
+		(start -1.77 1.77)
+		(end 1.77 1.77)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b4c5d6e7-f8a9-0123-bcde-234567890123")
+	)
+	(fp_line
+		(start -1.27 -3.81)
+		(end -1.27 0.635)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c5d6e7f8-a9b0-1234-cdef-345678901234")
+	)
+	(fp_line
+		(start -1.27 0.635)
+		(end -0.635 1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d6e7f8a9-b0c1-2345-defa-456789012345")
+	)
+	(fp_line
+		(start -0.635 1.27)
+		(end 1.27 1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e7f8a9b0-c1d2-3456-efab-567890123456")
+	)
+	(fp_line
+		(start -1.27 -3.81)
+		(end 1.27 -3.81)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f8a9b0c1-d2e3-4567-fabc-678901234567")
+	)
+	(fp_line
+		(start 1.27 -3.81)
+		(end 1.27 1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a9b0c1d2-e3f4-5678-abcd-789012345678")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -1.27 90)
+		(layer "F.Fab")
+		(uuid "b0c1d2e3-f4a5-6789-bcde-890123456789")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(pinfunction "A")
+		(pintype "passive")
+		(uuid "c1d2e3f4-a5b6-7890-cdef-901234567890")
+	)
+	(pad "2" thru_hole circle
+		(at 0 -2.54)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(pinfunction "B")
+		(pintype "passive")
+		(uuid "d2e3f4a5-b6c7-8901-defa-012345678901")
+	)
+	(model "${KIPRJMOD}/Project_Libraries/3D_Models/jumper-2-54mm-pitch-1.snapshot.19/Jumpers/Jumper2-green.step"
+		(offset
+			(xyz 0 -1.25 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 -90)
+		)
+	)
+)

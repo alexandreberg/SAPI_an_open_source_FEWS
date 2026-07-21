@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Footprints")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Footprints")(options "")(descr ""))
+  (lib (name "ilha3d_Jumper")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/ilha3d_Jumper.pretty")(options "")(descr "Custom 2-pin jumper footprint — bundled from ilha3d local library"))
+)

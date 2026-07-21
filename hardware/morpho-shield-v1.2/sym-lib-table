@@ -1,0 +1,13 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "20SQ045")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/20SQ045.kicad_sym")(options "")(descr ""))
+  (lib (name "bp")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/bp.kicad_sym")(options "")(descr ""))
+  (lib (name "HW-611")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/HW-611.kicad_sym")(options "")(descr ""))
+  (lib (name "HW-613")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/HW-613.kicad_sym")(options "")(descr ""))
+  (lib (name "ilha3d")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/ilha3d.kicad_sym")(options "")(descr ""))
+  (lib (name "ilha3d_FTDI_male")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/ilha3d_FTDI_male.kicad_sym")(options "")(descr ""))
+  (lib (name "ilha3d_LiLyGo_LORA32_LORA_XY")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/ilha3d_LiLyGo_LORA32_LORA_XY.kicad_sym")(options "")(descr ""))
+  (lib (name "ilha3d_STLink_Connector")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/ilha3d_STLink_Connector.kicad_sym")(options "")(descr ""))
+  (lib (name "RFM95W-915S2")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/RFM95W-915S2.kicad_sym")(options "")(descr ""))
+  (lib (name "Transmissor_STM32_BluePill_V1-rescue")(type "KiCad")(uri "${KIPRJMOD}/Project_Libraries/Symbols/Transmissor_STM32_BluePill_V1-rescue.kicad_sym")(options "")(descr ""))
+)
