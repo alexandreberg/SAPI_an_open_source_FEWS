@@ -1,0 +1,186 @@
+(footprint "HW-613"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "<b>DC/DC Adjustable Step-Down Regulator</b> based on <b>MP2315</b> chip")
+	(property "Reference" "REF**"
+		(at 3.33375 -12.065 0)
+		(layer "F.SilkS")
+		(uuid "9989239d-8653-4a18-8eed-6a8bac2f8663")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "HW-613"
+		(at 17.0523 -12.0485 0)
+		(layer "F.Fab")
+		(uuid "36fe7c63-b114-4b7b-9d69-bc383f7ac897")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "06410ef4-a867-41b6-8640-066a065b0e3f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a831f694-7273-4aa9-9e3b-2620031af067")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 0 -10.16)
+		(end 20.32 -10.16)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e6454f71-ea56-4266-8dcf-8abd0ba91281")
+	)
+	(fp_line
+		(start 0 0)
+		(end 0 -10.16)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bb87868f-d7f0-409c-97ae-097cdfeebc21")
+	)
+	(fp_line
+		(start 20.32 -10.16)
+		(end 20.32 0)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6077aae0-ea7a-4218-8578-34d8a193e21e")
+	)
+	(fp_line
+		(start 20.32 0)
+		(end 0 0)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "734adc3d-328d-497a-8c5d-f6722b4efa97")
+	)
+	(fp_text user "VO+"
+		(at 2.54 -0.9525 0)
+		(layer "F.SilkS")
+		(uuid "1138eeb2-6816-4cf5-a4d3-751e99e86519")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "EN"
+		(at 2.54 -8.5725 0)
+		(layer "F.SilkS")
+		(uuid "abe2fb5d-e97a-4453-81cb-5ffc84f68dca")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "IN+"
+		(at 2.54 -6.0325 0)
+		(layer "F.SilkS")
+		(uuid "b3c32cc9-2ff9-4921-a6b3-6fa2d5ed76e0")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "GND"
+		(at 2.54 -3.4925 0)
+		(layer "F.SilkS")
+		(uuid "f6a44bd9-db98-484f-af8b-15bb0d475745")
+		(effects
+			(font
+				(size 0.64 0.64)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "EN" thru_hole rect
+		(at 1.27 -8.89)
+		(size 1.9304 1.9304)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "e585fd29-315d-4a25-b94b-7a16cf792e46")
+	)
+	(pad "GND" thru_hole rect
+		(at 1.27 -3.81)
+		(size 1.9304 1.9304)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "bc191521-a84c-4f76-b511-6d2d39b0838a")
+	)
+	(pad "IN+" thru_hole rect
+		(at 1.27 -6.35)
+		(size 1.9304 1.9304)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "002bc9d1-8a0d-4b97-8495-0c0419f123de")
+	)
+	(pad "VO+" thru_hole rect
+		(at 1.27 -1.27)
+		(size 1.9304 1.9304)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "ac2d0771-ef6b-40c3-863a-94991fe5e8da")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/Libraries/3D_Models/HW-613.step"
+		(offset
+			(xyz 20 10.5 2.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -180)
+		)
+	)
+)
