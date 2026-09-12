@@ -1,0 +1,23 @@
+metric,M4_LightGBM,M6_LinearReg
+RMSE +30min (cm),1.04,0.974
+RMSE +60min (cm),1.469,1.528
+RMSE +90min (cm),1.704,1.948
+RMSE +120min (cm),1.909,2.259
+"Atenção recall (gate=5mm, db=3)",1.0,0.944
+"Atenção FP (gate=5mm, db=3)",0.0,0.0
+"Alerta recall (gate=5mm, db=3)",0.909,1.0
+"Alerta FP (gate=5mm, db=3)",0.0,0.0
+"Inundação recall (gate=5mm, db=3)",0.714,0.857
+"Inundação FP (gate=5mm, db=3)",0.0,0.0
+Lead time +30min Atenção mean (min),-21.1,-11.7
+Lead time +60min Atenção mean (min),-1.9,-8.1
+Lead time +90min Atenção mean (min),7.8,-8.8
+Lead time +120min Atenção mean (min),61.1,-10.6
+Lead time +30min Alerta mean (min),-8.1,-9.4
+Lead time +60min Alerta mean (min),-197.5,-9.4
+Lead time +90min Alerta mean (min),-82.5,-15.0
+Lead time +120min Alerta mean (min),-90.0,-18.1
+Lead time +30min Inundação mean (min),-55.0,-8.0
+Lead time +60min Inundação mean (min),-40.0,-15.0
+Lead time +90min Inundação mean (min),,-25.0
+Lead time +120min Inundação mean (min),,-28.3

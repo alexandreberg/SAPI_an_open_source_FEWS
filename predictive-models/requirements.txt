@@ -1,0 +1,8 @@
+# SAPI predictive_model_darts — standalone requirements
+# Install with: pip install -r requirements.txt
+# Uses the shared .venv from predictive_model/ or a new dedicated venv.
+
+darts[all]>=0.29.0
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8

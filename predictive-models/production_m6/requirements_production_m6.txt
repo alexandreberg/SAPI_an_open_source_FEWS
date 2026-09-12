@@ -1,0 +1,13 @@
+# SAPI M6 MLR Production Pipeline — pinned dependencies
+# Shared venv: /home/ilha3d/SAPI/LightGBM_Production/.venv/
+# All packages below are already present in the M4 venv — no extra install needed.
+#
+# LinearRegressionModel is part of darts[ml] (uses scikit-learn internally).
+# Identical package set to requirements_production.txt — listed here for reference.
+
+darts==0.43.0
+scikit-learn==1.8.0
+pandas==2.3.3
+numpy==2.4.3
+requests==2.33.1
+matplotlib

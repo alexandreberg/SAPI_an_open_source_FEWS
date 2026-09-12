@@ -1,0 +1,3 @@
+# continuous_predictions.csv is ~16 MB — too large to track in git.
+# Re-generate by running 01_model4_continuous.py.
+continuous_predictions.csv

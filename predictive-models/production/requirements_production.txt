@@ -1,0 +1,14 @@
+# SAPI LightGBM Production Pipeline — pinned dependencies
+# Install with: pip install -r requirements_production.txt
+# Target: /home/ilha3d/SAPI/LightGBM_Production/.venv/
+#
+# Pinned to match the versions validated in predictive_model/.venv (2026-05-10).
+# matplotlib added for Telegram alert chart generation (Issue #110).
+
+darts==0.43.0
+lightgbm==4.6.0
+scikit-learn==1.8.0
+pandas==2.3.3
+numpy==2.4.3
+requests==2.33.1
+matplotlib==3.10.3

@@ -1,0 +1,36 @@
+event_num,peak_time,peak_cm,analysis_start,analysis_end,split_set,type,level,donor_pct,notes,exclusion,p24h_mm
+1,2025-01-17 14:35:00,79,2025-01-16 21:45:00,2025-01-18 18:50:00,train,flood,Alerta,0.0,subida máx. em 30 min: 7 cm,,192.6
+2,2025-01-26 00:05:00,66,2025-01-25 17:55:00,2025-01-26 07:45:00,train,flood,Atenção,0.0,subida máx. em 30 min: 6 cm,,52.5
+3,2025-02-18 03:30:00,48,2025-02-17 22:10:00,2025-02-18 08:05:00,train,flood,Normal,0.0,subida máx. em 30 min: 1 cm,,20.7
+4,2025-04-10 19:35:00,98,2025-04-10 14:15:00,2025-04-11 22:55:00,train,flash_flood,Inundação,0.0,subida máx. em 30 min: 34 cm,,5.3
+5,2025-06-23 10:10:00,56,2025-06-23 03:55:00,2025-06-23 22:20:00,train,flood,Normal,0.0,subida máx. em 30 min: 5 cm,,5.4
+6,2025-06-26 22:25:00,58,2025-06-26 16:00:00,2025-06-27 09:00:00,train,flood,Normal,0.0,subida máx. em 30 min: 6 cm,,6.9
+7,2025-10-29 06:00:00,45,2025-10-29 00:55:00,2025-10-29 09:25:00,train,flood,Normal,0.0,subida máx. em 30 min: 1 cm,,19.6
+8,2025-12-09 15:00:00,163,2025-12-09 09:55:00,2025-12-10 18:35:00,train,flash_flood,Inundação,0.0,subida máx. em 30 min: 78 cm,,31.5
+9,2025-12-26 23:25:00,59,2025-12-26 19:25:00,2025-12-27 02:25:00,excluded,flood,Normal,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: nível bruto muito ruidoso; o ruído somado pelo filtro criou uma falsa elevação (inspeção visual 2026-09-11); 1.6 mm em 24 h (MERGE) (Issue #227),artifact,1.6
+10,2025-12-29 23:10:00,101,2025-12-29 18:15:00,2025-12-30 18:00:00,train,flash_flood,Inundação,0.0,subida máx. em 30 min: 35 cm,,20.3
+11,2025-12-31 11:30:00,58,2025-12-30 21:50:00,2025-12-31 16:35:00,train,flood,Normal,0.0,subida máx. em 30 min: 10 cm,,6.7
+12,2026-01-01 22:55:00,58,2026-01-01 17:10:00,2026-01-02 05:50:00,train,flood,Normal,0.0,subida máx. em 30 min: 3 cm,,3.7
+13,2026-01-05 05:00:00,58,2026-01-05 01:00:00,2026-01-05 07:40:00,excluded,flood,Normal,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.0
+14,2026-01-08 09:45:00,74,2026-01-08 03:20:00,2026-01-08 12:10:00,excluded,flash_flood,Atenção,0.0,subida máx. em 30 min: 34 cm; ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.0
+15,2026-01-16 06:10:00,68,2026-01-16 01:50:00,2026-01-16 10:25:00,excluded,flood,Atenção,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.0
+16,2026-01-17 09:10:00,69,2026-01-17 05:10:00,2026-01-17 11:40:00,excluded,flood,Atenção,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.0
+17,2026-01-18 03:35:00,69,2026-01-17 23:25:00,2026-01-18 06:05:00,excluded,flood,Atenção,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: 0.8 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.8
+18,2026-01-19 00:40:00,63,2026-01-18 18:20:00,2026-01-19 09:00:00,train,flood,Atenção,0.0,subida máx. em 30 min: 6 cm,,42.4
+19,2026-02-03 21:15:00,68,2026-02-03 17:10:00,2026-02-03 23:40:00,excluded,flood,Atenção,0.0,subida máx. em 30 min: 0 cm; ARTEFATO: 0.2 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.2
+20,2026-02-25 05:10:00,68,2026-02-24 23:35:00,2026-02-25 15:50:00,train,flood,Atenção,0.0,subida máx. em 30 min: 6 cm,,28.5
+21,2026-03-13 21:30:00,60,2026-03-13 17:20:00,2026-03-13 23:55:00,excluded,flood,Normal,7.5,subida máx. em 30 min: 0 cm; 8% da janela vem da E03 (Issue #225); ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02) (Issue #227),artifact,0.0
+22,2026-03-20 12:25:00,62,2026-03-20 00:50:00,2026-03-20 14:35:00,train,flood,Atenção,2.4,subida máx. em 30 min: 11 cm; 2% da janela vem da E03 (Issue #225),,46.0
+23,2026-03-30 03:15:00,52,2026-03-29 23:00:00,2026-03-30 08:40:00,excluded,flood,Normal,3.4,"subida máx. em 30 min: 0 cm; 3% da janela vem da E03 (Issue #225); ARTEFATO: 0.0 mm em 24 h antes do pico (Estação-02), com lacuna de 6h46 na Estação-02 (Issue #227)",artifact,0.0
+24,2026-04-06 15:25:00,59,2026-04-06 09:05:00,2026-04-07 05:20:00,train,flood,Normal,2.0,subida máx. em 30 min: 4 cm; 2% da janela vem da E03 (Issue #225),,43.6
+25,2026-04-08 04:25:00,84,2026-04-07 05:20:00,2026-04-08 23:20:00,train,flood,Alerta,5.0,subida máx. em 30 min: 16 cm; 5% da janela vem da E03 (Issue #225),,47.1
+26,2026-04-26 15:50:00,49,2026-04-26 10:40:00,2026-04-26 21:45:00,train,flood,Normal,0.0,subida máx. em 30 min: 2 cm,,35.8
+27,2026-05-09 22:15:00,54,2026-05-09 17:55:00,2026-05-10 01:30:00,test,flood,Normal,1.1,subida máx. em 30 min: 0 cm; 1% da janela vem da E03 (Issue #225),,44.4
+28,2026-06-20 21:30:00,60,2026-06-20 15:35:00,2026-06-21 02:40:00,test,flood,Atenção,0.0,subida máx. em 30 min: 4 cm,,38.9
+29,2026-06-30 12:25:00,65,2026-06-30 04:20:00,2026-07-01 01:55:00,test,flood,Atenção,0.0,subida máx. em 30 min: 3 cm,,30.6
+30,2026-07-01 12:50:00,61,2026-07-01 03:50:00,2026-07-02 00:50:00,test,flood,Atenção,0.0,subida máx. em 30 min: 2 cm,,18.2
+31,2026-07-11 13:40:00,97,2026-07-11 07:35:00,2026-07-12 20:10:00,test,flood,Inundação,0.7,subida máx. em 30 min: 17 cm; 1% da janela vem da E03 (Issue #225),,47.2
+32,2026-08-12 19:55:00,80,2026-08-12 11:40:00,2026-08-13 12:00:00,test,flood,Alerta,87.4,subida máx. em 30 min: 9 cm; 87% da janela vem da E03 (Issue #225),,48.6
+33,2026-08-15 16:30:00,92,2026-08-13 14:55:00,2026-08-16 09:20:00,test,flood,Inundação,92.9,subida máx. em 30 min: 11 cm; 93% da janela vem da E03 (Issue #225),,56.5
+34,2026-08-29 15:55:00,77,2026-08-29 10:30:00,2026-08-30 07:50:00,test,flood,Alerta,0.0,subida máx. em 30 min: 12 cm,,22.0
+35,2026-09-01 02:20:00,101,2026-08-30 09:10:00,2026-09-01 20:25:00,test,flood,Inundação,0.0,subida máx. em 30 min: 11 cm,,54.7
