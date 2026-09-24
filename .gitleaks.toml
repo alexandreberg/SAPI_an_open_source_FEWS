@@ -1,0 +1,58 @@
+# gitleaks configuration for SAPI.
+# Extends the default ruleset and adds project-specific identifiers that must
+# never be published. Run through tools/audit.sh, pre-commit and CI.
+
+title = "SAPI gitleaks config"
+
+[extend]
+useDefault = true
+
+# Hostinger account ids look like u + 9 digits and only ever appear as the
+# placeholder <HOSTINGER_USER> in this repository.
+[[rules]]
+id = "sapi-hostinger-account-id"
+description = "Real Hostinger account id (must be <HOSTINGER_USER>)"
+regex = '''\bu9\d{8}\b'''
+keywords = ["u9"]
+
+# SIM card ICCID (19-20 digits starting with 89).
+[[rules]]
+id = "sapi-sim-iccid"
+description = "SIM ICCID (must be <ICCID>)"
+regex = '''\b89\d{17,19}\b'''
+keywords = ["89"]
+
+# Module IMEI written next to the word IMEI.
+[[rules]]
+id = "sapi-imei"
+description = "Device IMEI (must be <IMEI>)"
+regex = '''(?i)imei[^0-9\n]{0,12}\d{15}\b'''
+keywords = ["imei"]
+
+# Telegram numeric chat/user ids.
+[[rules]]
+id = "sapi-telegram-chat-id"
+description = "Telegram chat_id (must be <CHAT_ID>)"
+regex = '''(?i)chat_?id["'\s:=]{1,6}-?\d{7,}'''
+keywords = ["chat"]
+
+[allowlist]
+description = "Known false positives"
+paths = [
+  # KiCad UUIDs / interactive-BOM blobs look like API keys but are not secrets.
+  '''(^|/)[^/]*\.kicad_(sch|sym|pcb|mod|pro)$''',
+  '''(^|/)ibom\.html$''',
+  # CAD exchange files (Git LFS): long numeric coordinates, no text secrets; the ICCID rule matched
+  # 113 coordinate strings in them during the KiCad import.
+  '''(?i)\.(step|stp|stl|wrl)$''',
+  # The tooling that defines the patterns above.
+  '''^tools/audit\.sh$''',
+  '''^tools/check_gitignore\.py$''',
+  '''^\.gitleaks\.toml$''',
+]
+regexTarget = "line"
+regexes = [
+  # predictive-models/production/config_production.py: the docstring "REST API. Note: sapi.ilha3d.com
+  # only redirects ..." trips generic-api-key; it is the public server URL, not a key.
+  '''Note: sapi\.ilha3d\.com only redirects''',
+]

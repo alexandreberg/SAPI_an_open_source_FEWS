@@ -1,0 +1,139 @@
+# =============================================================================
+# SAPI — .gitignore
+#
+# FIRST LINE OF DEFENCE against publishing secrets. It is a safety net: the real
+# control is the allow-list used to build this repository (nothing enters that
+# is not listed), and the audit run before every push (tools/audit.sh).
+#
+# Rule of thumb: only files named *-sample*, *_sample*, *.sample or *.example
+# are meant to be tracked; the real file lives on the device/server and is
+# NEVER committed. Copy the sample, fill it in locally.
+# =============================================================================
+
+# --- Firmware / gateway credentials (Wi-Fi, API key, server) ------------------
+credentials.h
+credentials_*.h
+!credentials_sample.h
+secrets.h
+*_secrets.h
+arduino_secrets.h
+
+# --- Compiled firmware ---------------------------------------------------------
+# A .bin/.elf built from a real credentials.h EMBEDS the Wi-Fi password and the
+# API key (checked on the old releases). Firmware binaries are published only as
+# release assets, after being scanned — never tracked.
+*.bin
+*.elf
+*.hex
+*.uf2
+*.map
+firmware.*
+
+# --- Web interface (PHP) -------------------------------------------------------
+db_config.php
+mail_config.php
+api_config.php
+# (patterns containing a slash are anchored to the repo root, hence the **/ prefix)
+**/private_configs/sapi.php
+**/cron/credenciais.php
+wp-config.php
+.htpasswd
+error_log
+error.log
+
+# --- Python / prediction pipelines ---------------------------------------------
+.env
+.env.*
+!.env.sample
+!.env.example
+telegram_config.json
+api_key.txt
+api_key*.txt
+config_mysql.py
+**/production*/config/
+# trained models and data snapshots are release assets, not repository content
+*.pkl
+*.joblib
+continuous_predictions*.csv
+station0*_level_*.csv
+station0*_precip*.csv
+merge_*.csv
+merge_precip.csv
+data/
+
+# --- Keys, certificates, tokens, cloud/SSH config -------------------------------
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.ppk
+*.ovpn
+id_rsa*
+id_ed25519*
+id_ecdsa*
+known_hosts
+.ssh/
+.netrc
+.npmrc
+.pypirc
+.aws/
+.gnupg/
+service-account*.json
+client_secret*.json
+*.token
+token.txt
+secrets.*
+.secrets
+*.secret
+
+# --- Database dumps and files ---------------------------------------------------
+*.sql.gz
+*.sql.zip
+*.dump
+*dump*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# --- AI-assistant instruction files: private working notes, NEVER published ---------
+# (the owner's CLAUDE.md holds internal workflow rules and local paths)
+CLAUDE.md
+CLAUDE*.md
+CLAUDE*.txt
+.claude/
+
+# --- Local tooling and editor state ----------------------------------------------
+settings.local.json
+.vscode/
+.idea/
+*.code-workspace
+.pio/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+vendor/
+
+# --- KiCad local state (paths, autosaves, backups) --------------------------------
+*.kicad_prl
+*-backups/
+_autosave-*
+*.lck
+~*
+fp-info-cache
+
+# --- Logs, backups, OS junk -------------------------------------------------------
+logs/
+*.log
+*.bak
+*.orig
+*.rej
+*.swp
+*.tmp
+.DS_Store
+Thumbs.db

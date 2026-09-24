@@ -1,0 +1,75 @@
+SAPI — Sistema de Alerta Prévio de Inundações
+Copyright (C) 2024–2026 Alexandre Nuernberg
+
+This product includes software developed by third parties. The SAPI project
+itself is licensed under the GNU Affero General Public License v3.0 or later
+(see LICENSE). Hardware designs under hardware/ are licensed separately
+under CERN-OHL-S-2.0 (see LICENSES/CERN-OHL-S-2.0.txt).
+
+All third-party dependencies listed below are compatible with AGPL v3.0; see
+docs/licensing/SAPI_Licensing_Report.md for the full compatibility
+analysis.
+
+================================================================================
+Embedded firmware (C/C++ — PlatformIO/Arduino)
+================================================================================
+
+Arduino-LoRa                Sandeep Mistry                        MIT
+TinyGSM                     Volodymyr Shymanskyy                  LGPL-2.1
+StreamDebugger              Volodymyr Shymanskyy                  MIT
+ArduinoJson                 Benoit Blanchon                       MIT
+SSLClient                   Open Source Labs (OSU)                MIT
+ArduinoHttpClient           Arduino Libraries                     Apache-2.0
+NewPing                     Tim Eckel                             MIT
+RTClib                      Adafruit / JeeLabs                    MIT
+Adafruit BMP280 Library     Adafruit                              BSD
+STM32duino LowPower         STMicroelectronics                    BSD
+STM32duino RTC              STMicroelectronics                    BSD
+DFRobot_SHT20               DFRobot                               MIT
+
+================================================================================
+Web interface (PHP — Composer)
+================================================================================
+
+phpmailer/phpmailer         PHPMailer contributors                LGPL-2.1
+rybakit/msgpack             Eugene Batyaev                        MIT
+phpunit/phpunit (dev)       Sebastian Bergmann                    BSD-3-Clause
+
+================================================================================
+Data processing / predictive models (Python — pip)
+================================================================================
+
+pandas                      NumFOCUS / pandas contributors        BSD-3-Clause
+numpy                       NumPy Developers                      BSD-3-Clause
+scipy                       SciPy Developers                      BSD-3-Clause
+scikit-learn                scikit-learn developers               BSD-3-Clause
+matplotlib                  Matplotlib Development Team           PSF / BSD-style
+sqlalchemy                  SQLAlchemy authors                    MIT
+python-dotenv               theskumar                             BSD-3-Clause
+pymysql                     PyMySQL contributors                  MIT
+mysql-connector-python      Oracle                                GPL-2.0
+darts                       Unit8 SA                              Apache-2.0
+lightgbm                    Microsoft Corporation                 MIT
+requests                    Kenneth Reitz / PSF                   Apache-2.0
+
+--------------------------------------------------------------------------------
+Note on mysql-connector-python: distributed under GPL-2.0. GPL-2.0 code is
+compatible for inclusion in an AGPL-3.0-or-later work (one-way compatibility;
+see https://www.gnu.org/licenses/license-compatibility.html).
+
+Note on darts/lightgbm/requests: pinned versions actually deployed in the
+Raspberry Pi production predictive-model pipelines (Model4-LGBM, Model6-MLR —
+see AppTest/raspberry/predictive_model_darts/production*/requirements_production*.txt).
+--------------------------------------------------------------------------------
+
+For the full per-component dependency audit and license-compatibility
+rationale, see docs/licensing/SAPI_Licensing_Report.md.
+
+--------------------------------------------------------------------------------
+Third-party 3D models in hardware/
+--------------------------------------------------------------------------------
+The KiCad projects under hardware/ include 3D models of off-the-shelf components
+(files under 3D_Models/ and Libraries/, e.g. *.step, *.stl, *.wrl and the
+*.snapshot.N folders) that were downloaded from component vendors and CAD
+sharing sites. They are NOT covered by CERN-OHL-S-2.0; each remains under its
+original author's terms. See hardware/README.md for their origin and terms.
