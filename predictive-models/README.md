@@ -1,4 +1,4 @@
-# predictive_model_darts
+# predictive-models
 
 Darts-based predictive models for SAPI — M4 (LightGBM) and M6 (multiple linear
 regression) — plus the data pipeline that feeds them and the production deployment.
@@ -20,11 +20,9 @@ regression) — plus the data pipeline that feeds them and the production deploy
 | `production/` | **M4 production** (inference, alert state, Telegram) | **Deployed** |
 | `production_m6/` | **M6 production** | **Deployed** |
 | `output_audit/` | Generated audit PDF | Output |
-| `legacy/` | Superseded code and experiments — see its `README.md` | **Archived** |
-
-Everything under `legacy/` was moved there on 2026-09-12 and feeds nothing. If a script or
-document points at a version of the catalogue or of the thresholds that does not match this
-table, it belongs there.
+Superseded code and experiments (the `legacy/` folder of the development repository) are not
+published here. If a script or document points at a version of the catalogue or of the
+thresholds that does not match this table, it is outdated.
 
 ## Two different event counts — read this first
 
@@ -88,9 +86,11 @@ Both models run on this Raspberry Pi via cron, every 5 minutes, M6 offset by 2 m
 
 Training is **not** done by the scripts inside `production/` — those are deprecated. Use
 `train_production_from_backtest.py`, which runs the same code that produced the published
-results. Full procedure in `Documentation/predictive_model/production_pipeline_guide.md`.
+results. Full procedure in [`docs/predictive-models/production_pipeline_guide.md`](../docs/predictive-models/production_pipeline_guide.md)
+(M6: [`production_pipeline_m6_guide.md`](../docs/predictive-models/production_pipeline_m6_guide.md)).
 
 ## Where the current numbers live
 
-`Documentation/predictive_model/base_reescrita_dissertacao.md` is authoritative. When any
-other document disagrees with it, it wins.
+The dissertation is authoritative, and its numbers come from the audit report
+[`output_audit/auditoria_eventos_A3.pdf`](output_audit/auditoria_eventos_A3.pdf) and the
+`results_final_*` folders. Thresholds and catalogue: [`docs/predictive-models/limiares_e_catalogo_v3.md`](../docs/predictive-models/limiares_e_catalogo_v3.md).

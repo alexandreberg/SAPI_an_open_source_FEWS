@@ -1,0 +1,5567 @@
+0
+Tempo obtido do NTP em UTC.
+Data e Hora UTC: Friday, March 06 2026 17:45:34
+Timestamp UTC ap√s sincroniza√√o: 1772819134
+Aguardando mensagens das Esta√√es...
+----------------------------------------------------------------------------
+[MODEM] Setting LTE-only mode (CNMP=38)...
+[MODEM] Setting NB-IoT preferred (CMNB=2)...
+[MODEM] Setting NB-IoT bands 28+3...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  -> 
++CPIN: READY
+
++PACSP1
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? -> 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  -> 
+DST: 0
+
+*PSUTTZ: 26/03/06,17:45:45","-12",0
+
++CREG: 0,0
+
+OK
+[NET] AT+CEREG? -> 
++CEREG: 0,1
+
+OK
+[NET] Registered OK
+[NET] Connecting GPRS | APN: iot.datatem.com.br
+[NET] GPRS connected | Local IP: 10.160.55.103
+[CEL] Ready | CSQ: 16 | IMEI: <IMEI>
+[DataTransmitter] Cellular initialized ‚ server: ilha3d.com:443
+----------------------------------------------------------------------------
+2- Corrupted LoRa message (invalid struct), discarding.
+Received Message: TS:1772819142
+DEBUG: Timestamp UTC armazenado: 1772819218
+DEBUG: Hora UTC: 17:46:58
+ Station 1 (FLN Norte - Estacao-01): Raw=251 cm ‚ Calibrated=40 cm (Zero=291.0)
+ID Station: 1
+Reading #: 3
+Timestamp: 1772819218
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+3- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 17:46:58
+Mem√ria livre: 211896 bytes
+Enviando mensagem LoRa: TS:1772819218
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 3
+Timestamp: 1772819218
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211944 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211748 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819294
+DEBUG: Hora UTC: 17:48:14
+ID Station: 1
+Reading #: 4
+Timestamp: 1772819294
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+4- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 5.25
+Data e Hora UTC: Friday, March 06 2026 17:48:14
+Mem√ria livre: 211696 bytes
+Enviando mensagem LoRa: TS:1772819294
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 4
+Timestamp: 1772819294
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211744 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211648 bytes
+(SSLClient)(SSL_ERROR)(m_run_until): SSL internals timed out! This could be an internal error, bad data sent from the server, or data being discarded due to a buffer overflow. If you are using Ethernet, did you modify the library properly (see README)?
+(SSLClient)(SSL_ERROR)(connected): Not connected because write error is set
+(SSLClient)(SSL_ERROR)(m_print_ssl_error): SSL_BR_WRITE_ERROR
+(SSLClient)(SSL_ERROR)(m_start_ssl): Failed to initlalize the SSL layer
+(SSLClient)(SSL_ERROR)(m_print_br_error): Unknown error code: 0
+[DataTransmitter] https.post() error: -1
+(SSLClient)(SSL_ERROR)(connected): Not connected because write error is set
+(SSLClient)(SSL_ERROR)(m_print_ssl_error): SSL_BR_WRITE_ERROR
+[DataTransmitter] Retry attempt 1 after 1000 ms
+[DataTransmitter] Sending HTTPS POST (attempt 2)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819332
+DEBUG: Hora UTC: 17:48:52
+ Station 3 (FLN Norte - Estacao-03): Raw=202 cm ‚ Calibrated=34 cm (Zero=236.0)
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2819
+Timestamp: 1772819332
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 21763
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2819
+Timestamp: 1772819332
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 21763
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819370
+DEBUG: Hora UTC: 17:49:30
+ID Station: 1
+Reading #: 5
+Timestamp: 1772819370
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -102
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+5- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -102 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 17:49:30
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819370
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 5
+Timestamp: 1772819370
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -102
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819432
+DEBUG: Hora UTC: 17:50:32
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12115
+Timestamp: 1772819432
+Level: -99
+Temperature: 40.27
+Pressure: 1013.47
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14635
+RSSI (sensor): -63
+SNR (sensor): 10.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -63 dBm | SNR: 10.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12115
+Timestamp: 1772819432
+Level: -99
+Temperature: 40.27
+Pressure: 1013.47
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14635
+RSSI (sensor): -63
+SNR (sensor): 10.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819447
+DEBUG: Hora UTC: 17:50:47
+ID Station: 1
+Reading #: 6
+Timestamp: 1772819447
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+6- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 6.50
+Data e Hora UTC: Friday, March 06 2026 17:50:47
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819447
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 6
+Timestamp: 1772819447
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+----------------------------------------------------------------------------
+7- Corrupted LoRa message (invalid struct), discarding.
+Received Message: ˚Ï¿-_ÕRI’,+z{b) Ï1æt„’6$6˘1-OóÍÄ>\Â8Yó_î=|Ö˙"\úWñ~w’Œi¨wºóTn%∞∞ÂÓ0a≥¢-¸íØ{¡ª·QZç^ﬂˆ&¡÷oUzœçü∑0¥&»4zc’q≠rü.°Nª*˚ÏÉlw√¡ˇ‹APüVQ∂¯4n‹vuœ∞\7‹ZErR(!¨DÚ«&)OŒ˚eøﬁGúlr+
+DEBUG: Timestamp UTC armazenado: 1772819523
+DEBUG: Hora UTC: 17:52:03
+ID Station: 1
+Reading #: 8
+Timestamp: 1772819523
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+8- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 17:52:03
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819523
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 8
+Timestamp: 1772819523
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211584 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819599
+DEBUG: Hora UTC: 17:53:19
+ID Station: 1
+Reading #: 9
+Timestamp: 1772819599
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+9- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 17:53:19
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819599
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 9
+Timestamp: 1772819599
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819649
+DEBUG: Hora UTC: 17:54:09
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2821
+Timestamp: 1772819649
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 21123
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2821
+Timestamp: 1772819649
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 21123
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819675
+DEBUG: Hora UTC: 17:54:35
+ID Station: 1
+Reading #: 10
+Timestamp: 1772819675
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+10- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 17:54:35
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819675
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 10
+Timestamp: 1772819675
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819752
+DEBUG: Hora UTC: 17:55:52
+ID Station: 1
+Reading #: 11
+Timestamp: 1772819752
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+11- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 6.50
+Data e Hora UTC: Friday, March 06 2026 17:55:52
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819752
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 11
+Timestamp: 1772819752
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819828
+DEBUG: Hora UTC: 17:57:08
+ID Station: 1
+Reading #: 12
+Timestamp: 1772819828
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+12- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 17:57:08
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819828
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 12
+Timestamp: 1772819828
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819904
+DEBUG: Hora UTC: 17:58:24
+ID Station: 1
+Reading #: 13
+Timestamp: 1772819904
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+13- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 17:58:24
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819904
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 13
+Timestamp: 1772819904
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819968
+DEBUG: Hora UTC: 17:59:28
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2823
+Timestamp: 1772819968
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 20818
+RSSI (sensor): -75
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.75 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2823
+Timestamp: 1772819968
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12368
+Vpanel: 20818
+RSSI (sensor): -75
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772819980
+DEBUG: Hora UTC: 17:59:40
+ID Station: 1
+Reading #: 14
+Timestamp: 1772819980
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+14- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 17:59:40
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772819980
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 14
+Timestamp: 1772819980
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820057
+DEBUG: Hora UTC: 18:00:57
+ID Station: 1
+Reading #: 15
+Timestamp: 1772820057
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+15- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -107 | SNR: 5.75
+Data e Hora UTC: Friday, March 06 2026 18:00:57
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820057
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 15
+Timestamp: 1772820057
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820133
+DEBUG: Hora UTC: 18:02:13
+ID Station: 1
+Reading #: 16
+Timestamp: 1772820133
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+16- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -107 | SNR: 5.75
+Data e Hora UTC: Friday, March 06 2026 18:02:13
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820133
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 16
+Timestamp: 1772820133
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820209
+DEBUG: Hora UTC: 18:03:29
+ID Station: 1
+Reading #: 17
+Timestamp: 1772820209
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+17- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -106 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:03:29
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820209
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 17
+Timestamp: 1772820209
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820285
+DEBUG: Hora UTC: 18:04:45
+ID Station: 1
+Reading #: 18
+Timestamp: 1772820285
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+18- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:04:45
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820285
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 18
+Timestamp: 1772820285
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820292
+DEBUG: Hora UTC: 18:04:52
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2825
+Timestamp: 1772820292
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12364
+Vpanel: 20806
+RSSI (sensor): -75
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2825
+Timestamp: 1772820292
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12364
+Vpanel: 20806
+RSSI (sensor): -75
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820330
+DEBUG: Hora UTC: 18:05:30
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12117
+Timestamp: 1772820330
+Level: -99
+Temperature: 40.46
+Pressure: 1013.33
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14616
+RSSI (sensor): -64
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -64 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12117
+Timestamp: 1772820330
+Level: -99
+Temperature: 40.46
+Pressure: 1013.33
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14616
+RSSI (sensor): -64
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820362
+DEBUG: Hora UTC: 18:06:02
+ID Station: 1
+Reading #: 19
+Timestamp: 1772820362
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+19- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:06:02
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820362
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 19
+Timestamp: 1772820362
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820438
+DEBUG: Hora UTC: 18:07:18
+ID Station: 1
+Reading #: 20
+Timestamp: 1772820438
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+20- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:07:18
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820438
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 20
+Timestamp: 1772820438
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820514
+DEBUG: Hora UTC: 18:08:34
+ID Station: 1
+Reading #: 21
+Timestamp: 1772820514
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+21- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:08:34
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820514
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 21
+Timestamp: 1772820514
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820590
+DEBUG: Hora UTC: 18:09:50
+ID Station: 1
+Reading #: 22
+Timestamp: 1772820590
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+22- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:09:50
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820590
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 22
+Timestamp: 1772820590
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820606
+DEBUG: Hora UTC: 18:10:06
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2827
+Timestamp: 1772820606
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12364
+Vpanel: 21284
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2827
+Timestamp: 1772820606
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12364
+Vpanel: 21284
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820667
+DEBUG: Hora UTC: 18:11:07
+ID Station: 1
+Reading #: 23
+Timestamp: 1772820667
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+23- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.50
+Data e Hora UTC: Friday, March 06 2026 18:11:07
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820667
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 23
+Timestamp: 1772820667
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820743
+DEBUG: Hora UTC: 18:12:23
+ID Station: 1
+Reading #: 24
+Timestamp: 1772820743
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+24- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:12:23
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820743
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 24
+Timestamp: 1772820743
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820819
+DEBUG: Hora UTC: 18:13:39
+ID Station: 1
+Reading #: 25
+Timestamp: 1772820819
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+25- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.25
+Data e Hora UTC: Friday, March 06 2026 18:13:39
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820819
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 25
+Timestamp: 1772820819
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820895
+DEBUG: Hora UTC: 18:14:55
+ID Station: 1
+Reading #: 26
+Timestamp: 1772820895
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+26- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:14:55
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820895
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 26
+Timestamp: 1772820895
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820925
+DEBUG: Hora UTC: 18:15:25
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2829
+Timestamp: 1772820925
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12361
+Vpanel: 21713
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2829
+Timestamp: 1772820925
+Level: 33
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12361
+Vpanel: 21713
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772820972
+DEBUG: Hora UTC: 18:16:12
+ID Station: 1
+Reading #: 27
+Timestamp: 1772820972
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+27- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:16:12
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772820972
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 27
+Timestamp: 1772820972
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821048
+DEBUG: Hora UTC: 18:17:28
+ID Station: 1
+Reading #: 28
+Timestamp: 1772821048
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+28- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.50
+Data e Hora UTC: Friday, March 06 2026 18:17:28
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821048
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 28
+Timestamp: 1772821048
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821124
+DEBUG: Hora UTC: 18:18:44
+ID Station: 1
+Reading #: 29
+Timestamp: 1772821124
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+29- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:18:44
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821124
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 29
+Timestamp: 1772821124
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821200
+DEBUG: Hora UTC: 18:20:00
+ID Station: 1
+Reading #: 30
+Timestamp: 1772821200
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+30- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.50
+Data e Hora UTC: Friday, March 06 2026 18:20:00
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821200
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 30
+Timestamp: 1772821200
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821228
+DEBUG: Hora UTC: 18:20:28
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12119
+Timestamp: 1772821228
+Level: -99
+Temperature: 39.71
+Pressure: 1013.18
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14597
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -67 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12119
+Timestamp: 1772821228
+Level: -99
+Temperature: 39.71
+Pressure: 1013.18
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14597
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821243
+DEBUG: Hora UTC: 18:20:43
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2831
+Timestamp: 1772821243
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12361
+Vpanel: 22328
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.75 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2831
+Timestamp: 1772821243
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12361
+Vpanel: 22328
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821277
+DEBUG: Hora UTC: 18:21:17
+ID Station: 1
+Reading #: 31
+Timestamp: 1772821277
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+31- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:21:17
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821277
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 31
+Timestamp: 1772821277
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821353
+DEBUG: Hora UTC: 18:22:33
+ID Station: 1
+Reading #: 32
+Timestamp: 1772821353
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+32- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:22:33
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821353
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 32
+Timestamp: 1772821353
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821429
+DEBUG: Hora UTC: 18:23:49
+ID Station: 1
+Reading #: 33
+Timestamp: 1772821429
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+33- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:23:49
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821429
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 33
+Timestamp: 1772821429
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821505
+DEBUG: Hora UTC: 18:25:05
+ID Station: 1
+Reading #: 34
+Timestamp: 1772821505
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+34- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:25:05
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821505
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 34
+Timestamp: 1772821505
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821562
+DEBUG: Hora UTC: 18:26:02
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2833
+Timestamp: 1772821562
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12358
+Vpanel: 22620
+RSSI (sensor): -77
+SNR (sensor): 10.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -77 dBm | SNR: 10.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2833
+Timestamp: 1772821562
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 30.00
+Vbat: 12358
+Vpanel: 22620
+RSSI (sensor): -77
+SNR (sensor): 10.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821582
+DEBUG: Hora UTC: 18:26:22
+ID Station: 1
+Reading #: 35
+Timestamp: 1772821582
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+35- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:26:22
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821582
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 35
+Timestamp: 1772821582
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821658
+DEBUG: Hora UTC: 18:27:38
+ID Station: 1
+Reading #: 36
+Timestamp: 1772821658
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+36- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:27:38
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821658
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 36
+Timestamp: 1772821658
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821734
+DEBUG: Hora UTC: 18:28:54
+ID Station: 1
+Reading #: 37
+Timestamp: 1772821734
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -101
+SNR (sensor): 9.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+37- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -101 | SNR: 9.00
+Data e Hora UTC: Friday, March 06 2026 18:28:54
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821734
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 37
+Timestamp: 1772821734
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -101
+SNR (sensor): 9.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821810
+DEBUG: Hora UTC: 18:30:10
+ID Station: 1
+Reading #: 38
+Timestamp: 1772821810
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+38- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.25
+Data e Hora UTC: Friday, March 06 2026 18:30:10
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821810
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 38
+Timestamp: 1772821810
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821881
+DEBUG: Hora UTC: 18:31:21
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2835
+Timestamp: 1772821881
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 22197
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2835
+Timestamp: 1772821881
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 22197
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821887
+DEBUG: Hora UTC: 18:31:27
+ID Station: 1
+Reading #: 39
+Timestamp: 1772821887
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+39- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 5.25
+Data e Hora UTC: Friday, March 06 2026 18:31:27
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821887
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 39
+Timestamp: 1772821887
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772821963
+DEBUG: Hora UTC: 18:32:43
+ID Station: 1
+Reading #: 40
+Timestamp: 1772821963
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+40- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:32:43
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772821963
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 40
+Timestamp: 1772821963
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822039
+DEBUG: Hora UTC: 18:33:59
+ID Station: 1
+Reading #: 41
+Timestamp: 1772822039
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+41- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 18:33:59
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822039
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 41
+Timestamp: 1772822039
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822115
+DEBUG: Hora UTC: 18:35:15
+ID Station: 1
+Reading #: 42
+Timestamp: 1772822115
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+42- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.25
+Data e Hora UTC: Friday, March 06 2026 18:35:15
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822115
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 42
+Timestamp: 1772822115
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822126
+DEBUG: Hora UTC: 18:35:26
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12121
+Timestamp: 1772822126
+Level: -99
+Temperature: 38.74
+Pressure: 1012.97
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14301
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -67 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12121
+Timestamp: 1772822126
+Level: -99
+Temperature: 38.74
+Pressure: 1012.97
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14301
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822192
+DEBUG: Hora UTC: 18:36:32
+ID Station: 1
+Reading #: 43
+Timestamp: 1772822192
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+43- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -107 | SNR: 5.25
+Data e Hora UTC: Friday, March 06 2026 18:36:32
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822192
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 43
+Timestamp: 1772822192
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 5.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822200
+DEBUG: Hora UTC: 18:36:40
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2837
+Timestamp: 1772822200
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12358
+Vpanel: 21247
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2837
+Timestamp: 1772822200
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12358
+Vpanel: 21247
+RSSI (sensor): -75
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822268
+DEBUG: Hora UTC: 18:37:48
+ID Station: 1
+Reading #: 44
+Timestamp: 1772822268
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+44- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:37:48
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822268
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 44
+Timestamp: 1772822268
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822344
+DEBUG: Hora UTC: 18:39:04
+ID Station: 1
+Reading #: 45
+Timestamp: 1772822344
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+45- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:39:04
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822344
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 45
+Timestamp: 1772822344
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822420
+DEBUG: Hora UTC: 18:40:20
+ID Station: 1
+Reading #: 46
+Timestamp: 1772822420
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+46- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:40:20
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822420
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 46
+Timestamp: 1772822420
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822497
+DEBUG: Hora UTC: 18:41:37
+ID Station: 1
+Reading #: 47
+Timestamp: 1772822497
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+47- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 6.50
+Data e Hora UTC: Friday, March 06 2026 18:41:37
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822497
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 47
+Timestamp: 1772822497
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822519
+DEBUG: Hora UTC: 18:41:59
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2839
+Timestamp: 1772822519
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 20085
+RSSI (sensor): -75
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2839
+Timestamp: 1772822519
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 20085
+RSSI (sensor): -75
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822573
+DEBUG: Hora UTC: 18:42:53
+ID Station: 1
+Reading #: 48
+Timestamp: 1772822573
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+48- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 18:42:53
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822573
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 48
+Timestamp: 1772822573
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822649
+DEBUG: Hora UTC: 18:44:09
+ID Station: 1
+Reading #: 49
+Timestamp: 1772822649
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+49- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -106 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:44:09
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822649
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 49
+Timestamp: 1772822649
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822725
+DEBUG: Hora UTC: 18:45:25
+ID Station: 1
+Reading #: 50
+Timestamp: 1772822725
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+50- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 18:45:25
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822725
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 50
+Timestamp: 1772822725
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822802
+DEBUG: Hora UTC: 18:46:42
+ID Station: 1
+Reading #: 51
+Timestamp: 1772822802
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+51- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 18:46:42
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822802
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 51
+Timestamp: 1772822802
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822838
+DEBUG: Hora UTC: 18:47:18
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2841
+Timestamp: 1772822838
+Level: 35
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20209
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2841
+Timestamp: 1772822838
+Level: 35
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20209
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822878
+DEBUG: Hora UTC: 18:47:58
+ID Station: 1
+Reading #: 52
+Timestamp: 1772822878
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+52- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:47:58
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822878
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 52
+Timestamp: 1772822878
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772822954
+DEBUG: Hora UTC: 18:49:14
+ID Station: 1
+Reading #: 53
+Timestamp: 1772822954
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+53- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:49:14
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772822954
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 53
+Timestamp: 1772822954
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823024
+DEBUG: Hora UTC: 18:50:24
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12123
+Timestamp: 1772823024
+Level: -99
+Temperature: 37.06
+Pressure: 1012.89
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14540
+RSSI (sensor): -61
+SNR (sensor): 10.00
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -61 dBm | SNR: 10.00 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12123
+Timestamp: 1772823024
+Level: -99
+Temperature: 37.06
+Pressure: 1012.89
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14540
+RSSI (sensor): -61
+SNR (sensor): 10.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 201 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823031
+DEBUG: Hora UTC: 18:50:31
+ID Station: 1
+Reading #: 54
+Timestamp: 1772823031
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+54- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 18:50:31
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823031
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 54
+Timestamp: 1772823031
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823107
+DEBUG: Hora UTC: 18:51:47
+ID Station: 1
+Reading #: 55
+Timestamp: 1772823107
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+55- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 18:51:47
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823107
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 55
+Timestamp: 1772823107
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823157
+DEBUG: Hora UTC: 18:52:37
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2843
+Timestamp: 1772823157
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 20284
+RSSI (sensor): -75
+SNR (sensor): 10.00
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -75 dBm | SNR: 10.00 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2843
+Timestamp: 1772823157
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12354
+Vpanel: 20284
+RSSI (sensor): -75
+SNR (sensor): 10.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 218 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823183
+DEBUG: Hora UTC: 18:53:03
+ID Station: 1
+Reading #: 56
+Timestamp: 1772823183
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+56- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:53:03
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823183
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 56
+Timestamp: 1772823183
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823259
+DEBUG: Hora UTC: 18:54:19
+ID Station: 1
+Reading #: 57
+Timestamp: 1772823259
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+57- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:54:19
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823259
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 57
+Timestamp: 1772823259
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823335
+DEBUG: Hora UTC: 18:55:35
+ID Station: 1
+Reading #: 58
+Timestamp: 1772823335
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+58- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.25
+Data e Hora UTC: Friday, March 06 2026 18:55:35
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823335
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 58
+Timestamp: 1772823335
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823412
+DEBUG: Hora UTC: 18:56:52
+ID Station: 1
+Reading #: 59
+Timestamp: 1772823412
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+59- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:56:52
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823412
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 59
+Timestamp: 1772823412
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823475
+DEBUG: Hora UTC: 18:57:55
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2845
+Timestamp: 1772823475
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20396
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.75 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2845
+Timestamp: 1772823475
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20396
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823488
+DEBUG: Hora UTC: 18:58:08
+ID Station: 1
+Reading #: 60
+Timestamp: 1772823488
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+60- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -106 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 18:58:08
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823488
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 60
+Timestamp: 1772823488
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823564
+DEBUG: Hora UTC: 18:59:24
+ID Station: 1
+Reading #: 61
+Timestamp: 1772823564
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+61- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -105 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 18:59:24
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823564
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 61
+Timestamp: 1772823564
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823640
+DEBUG: Hora UTC: 19:00:40
+ID Station: 1
+Reading #: 62
+Timestamp: 1772823640
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+62- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 19:00:40
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823640
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 62
+Timestamp: 1772823640
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823717
+DEBUG: Hora UTC: 19:01:57
+ID Station: 1
+Reading #: 63
+Timestamp: 1772823717
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+63- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 19:01:57
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823717
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 63
+Timestamp: 1772823717
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823793
+DEBUG: Hora UTC: 19:03:13
+ID Station: 1
+Reading #: 64
+Timestamp: 1772823793
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+64- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:03:13
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823793
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 64
+Timestamp: 1772823793
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823799
+DEBUG: Hora UTC: 19:03:19
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2847
+Timestamp: 1772823799
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20203
+RSSI (sensor): -79
+SNR (sensor): 9.00
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -79 dBm | SNR: 9.00 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2847
+Timestamp: 1772823799
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12351
+Vpanel: 20203
+RSSI (sensor): -79
+SNR (sensor): 9.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 218 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823869
+DEBUG: Hora UTC: 19:04:29
+ID Station: 1
+Reading #: 65
+Timestamp: 1772823869
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+65- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:04:29
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823869
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 65
+Timestamp: 1772823869
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823922
+DEBUG: Hora UTC: 19:05:22
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12125
+Timestamp: 1772823922
+Level: -99
+Temperature: 36.42
+Pressure: 1012.91
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14754
+RSSI (sensor): -61
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -61 dBm | SNR: 9.75 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12125
+Timestamp: 1772823922
+Level: -99
+Temperature: 36.42
+Pressure: 1012.91
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14754
+RSSI (sensor): -61
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772823945
+DEBUG: Hora UTC: 19:05:45
+ID Station: 1
+Reading #: 66
+Timestamp: 1772823945
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+66- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -106 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:05:45
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772823945
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 66
+Timestamp: 1772823945
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824022
+DEBUG: Hora UTC: 19:07:02
+ID Station: 1
+Reading #: 67
+Timestamp: 1772824022
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+67- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 19:07:02
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824022
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 67
+Timestamp: 1772824022
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824098
+DEBUG: Hora UTC: 19:08:18
+ID Station: 1
+Reading #: 68
+Timestamp: 1772824098
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+68- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:08:18
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824098
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 68
+Timestamp: 1772824098
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824113
+DEBUG: Hora UTC: 19:08:33
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2849
+Timestamp: 1772824113
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12348
+Vpanel: 21116
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2849
+Timestamp: 1772824113
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12348
+Vpanel: 21116
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+----------------------------------------------------------------------------
+69- Corrupted LoRa message (invalid struct), discarding.
+Received Message: Ä‰–·‡_ΩÊ^√œÌÎ«GF‘ÿC-É†ât‹5Û‘“ÂÊRCç÷ı-ƒSMæ˜XúÃÁt{uó–˜ÁW|÷lXmª†%5Sà»Bºå∫?%¥Lf©
+3W}—.kºº´¬ï6‡îˇ&Èq†ÇT$n˙kn0ÁÛ>%(K-tû◊Ì
+DEBUG: Timestamp UTC armazenado: 1772824174
+DEBUG: Hora UTC: 19:09:34
+ID Station: 1
+Reading #: 70
+Timestamp: 1772824174
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+70- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:09:34
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824174
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 70
+Timestamp: 1772824174
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824251
+DEBUG: Hora UTC: 19:10:51
+ID Station: 1
+Reading #: 71
+Timestamp: 1772824251
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+71- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 19:10:51
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824251
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 71
+Timestamp: 1772824251
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824327
+DEBUG: Hora UTC: 19:12:07
+ID Station: 1
+Reading #: 72
+Timestamp: 1772824327
+Level: 39
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+72- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 252cm | Size: 18 RSSI: -105 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:12:07
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824327
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 72
+Timestamp: 1772824327
+Level: 39
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824403
+DEBUG: Hora UTC: 19:13:23
+ID Station: 1
+Reading #: 73
+Timestamp: 1772824403
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+73- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:13:23
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824403
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 73
+Timestamp: 1772824403
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824432
+DEBUG: Hora UTC: 19:13:52
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2851
+Timestamp: 1772824432
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20793
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2851
+Timestamp: 1772824432
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20793
+RSSI (sensor): -76
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824479
+DEBUG: Hora UTC: 19:14:39
+ID Station: 1
+Reading #: 74
+Timestamp: 1772824479
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+74- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 19:14:39
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824479
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 74
+Timestamp: 1772824479
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824556
+DEBUG: Hora UTC: 19:15:56
+ID Station: 1
+Reading #: 75
+Timestamp: 1772824556
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+75- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.25
+Data e Hora UTC: Friday, March 06 2026 19:15:56
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824556
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 75
+Timestamp: 1772824556
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824632
+DEBUG: Hora UTC: 19:17:12
+ID Station: 1
+Reading #: 76
+Timestamp: 1772824632
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+76- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -103 | SNR: 8.25
+Data e Hora UTC: Friday, March 06 2026 19:17:12
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824632
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 76
+Timestamp: 1772824632
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824708
+DEBUG: Hora UTC: 19:18:28
+ID Station: 1
+Reading #: 77
+Timestamp: 1772824708
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+77- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 250cm | Size: 18 RSSI: -107 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 19:18:28
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824708
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 77
+Timestamp: 1772824708
+Level: 41
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -107
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824751
+DEBUG: Hora UTC: 19:19:11
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2853
+Timestamp: 1772824751
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20688
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2853
+Timestamp: 1772824751
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20688
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824784
+DEBUG: Hora UTC: 19:19:44
+ID Station: 1
+Reading #: 78
+Timestamp: 1772824784
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+78- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.00
+Data e Hora UTC: Friday, March 06 2026 19:19:44
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824784
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 78
+Timestamp: 1772824784
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824820
+DEBUG: Hora UTC: 19:20:20
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 2
+Reading #: 12127
+Timestamp: 1772824820
+Level: -99
+Temperature: 36.21
+Pressure: 1012.81
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14672
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -67 dBm | SNR: 9.50 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 2
+Reading #: 12127
+Timestamp: 1772824820
+Level: -99
+Temperature: 36.21
+Pressure: 1012.81
+Humidity: -99
+Precipitation pulses: 0
+Surface temperature: -99.00
+Vbat: 13727
+Vpanel: 14672
+RSSI (sensor): -67
+SNR (sensor): 9.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 205 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824861
+DEBUG: Hora UTC: 19:21:01
+ID Station: 1
+Reading #: 79
+Timestamp: 1772824861
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+79- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:21:01
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824861
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 79
+Timestamp: 1772824861
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772824937
+DEBUG: Hora UTC: 19:22:17
+ID Station: 1
+Reading #: 80
+Timestamp: 1772824937
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+80- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:22:17
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772824937
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 80
+Timestamp: 1772824937
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825013
+DEBUG: Hora UTC: 19:23:33
+ID Station: 1
+Reading #: 81
+Timestamp: 1772825013
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+81- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:23:33
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825013
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 81
+Timestamp: 1772825013
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825070
+DEBUG: Hora UTC: 19:24:30
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2855
+Timestamp: 1772825070
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20265
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.75 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2855
+Timestamp: 1772825070
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20265
+RSSI (sensor): -76
+SNR (sensor): 9.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825089
+DEBUG: Hora UTC: 19:24:49
+ID Station: 1
+Reading #: 82
+Timestamp: 1772825089
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+82- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -106 | SNR: 7.50
+Data e Hora UTC: Friday, March 06 2026 19:24:49
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825089
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 82
+Timestamp: 1772825089
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -106
+SNR (sensor): 7.50
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825166
+DEBUG: Hora UTC: 19:26:06
+ID Station: 1
+Reading #: 83
+Timestamp: 1772825166
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+83- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 6.75
+Data e Hora UTC: Friday, March 06 2026 19:26:06
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825166
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 83
+Timestamp: 1772825166
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 6.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825242
+DEBUG: Hora UTC: 19:27:22
+ID Station: 1
+Reading #: 84
+Timestamp: 1772825242
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+84- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -105 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:27:22
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825242
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 84
+Timestamp: 1772825242
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -105
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825318
+DEBUG: Hora UTC: 19:28:38
+ID Station: 1
+Reading #: 85
+Timestamp: 1772825318
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+85- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:28:38
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825318
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 85
+Timestamp: 1772825318
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825388
+DEBUG: Hora UTC: 19:29:48
+-------------------------------------------------
+Pacote recebido via LoRa:
+ID Station: 3
+Reading #: 2857
+Timestamp: 1772825388
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20812
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+RSSI LoRa: -76 dBm | SNR: 9.25 dB
+-------------------------------------------------
+
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 3
+Reading #: 2857
+Timestamp: 1772825388
+Level: 34
+Temperature: 0.00
+Pressure: 0.00
+Humidity: 0
+Precipitation pulses: 0
+Surface temperature: 29.00
+Vbat: 12344
+Vpanel: 20812
+RSSI (sensor): -76
+SNR (sensor): 9.25
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 222 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825394
+DEBUG: Hora UTC: 19:29:54
+ID Station: 1
+Reading #: 86
+Timestamp: 1772825394
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+86- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -104 | SNR: 7.75
+Data e Hora UTC: Friday, March 06 2026 19:29:55
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825395
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 86
+Timestamp: 1772825394
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -104
+SNR (sensor): 7.75
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 85 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+
+DEBUG: Timestamp UTC armazenado: 1772825471
+DEBUG: Hora UTC: 19:31:11
+ID Station: 1
+Reading #: 87
+Timestamp: 1772825471
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+----------------------------------------------------------------------------
+87- Mensagem Recebida de Sensor: Station_01 | Altura Lida: 251cm | Size: 18 RSSI: -103 | SNR: 8.00
+Data e Hora UTC: Friday, March 06 2026 19:31:11
+Mem√ria livre: 211648 bytes
+Enviando mensagem LoRa: TS:1772825471
+============================================================
+Preparing to send data to server...
+Connectivity: WiFi=READY, Cellular=READY
+ID Station: 1
+Reading #: 87
+Timestamp: 1772825471
+Level: 40
+Temperature: -99.00
+Pressure: -99.00
+Humidity: -99
+Precipitation pulses: -99
+Surface temperature: -99.00
+Vbat: -99
+Vpanel: -99
+RSSI (sensor): -103
+SNR (sensor): 8.00
+sigWiFi: 0
+sigCel: 0
+[DataTransmitter] Starting Cellular HTTPS transmission...
+[DataTransmitter] Free heap: 211696 bytes
+[DataTransmitter] Data serialized: 81 bytes
+[DataTransmitter] Sending HTTPS POST (attempt 1)
+[DataTransmitter] Free heap: 211600 bytes
+[DataTransmitter] Cellular HTTPS transmission successful (HTTP 200)
+‚ Data successfully transmitted to server
+HTTP Response Code: 200
+============================================================
+

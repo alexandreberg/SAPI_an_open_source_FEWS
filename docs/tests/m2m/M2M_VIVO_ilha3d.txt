@@ -1,0 +1,303 @@
+0
+[MODEM] Modem not responding. Pulsing PWRKEY (1.5 s)...
+[MODEM] Waiting 8 s for module to boot...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode 2 (NB-IoT)...
+[MODEM] Setting NB-IoT band to Band 28 (700 MHz, Brazil)...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 14 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 26 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 37 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 49 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 61 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 72 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 84 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 96 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 107 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 119 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 131 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 143 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 154 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 166 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 178 s
+[NET] ERROR: registration timeout after 180 s (CREG and CEREG both failed)
+[FATAL] Cellular connection failed. Restarting in 10 s...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+[   472][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+
+==============================================
+ SAPI Gateway - M2M Cellular Test
+ Station ID 99 | FAKE DATA | Issue #37
+==============================================
+[MODEM] Checking if modem is already responding...
+[MODEM] Modem already on. Calling init()...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode 2 (NB-IoT)...
+[MODEM] Setting NB-IoT band to Band 28 (700 MHz, Brazil)...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 14 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 26 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 37 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 49 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 61 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 72 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 84 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 96 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 107 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 119 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 131 s

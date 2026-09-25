@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use SAPI, its data or its code in academic work, please cite the dissertation below."
+title: "SAPI — an open-source flood early warning system"
+abstract: >-
+  Low-cost, open-source flood monitoring and early-warning system: LoRa water-level and
+  rain-gauge stations, an ESP32 gateway with NB-IoT failover, a PHP/MySQL web interface
+  with multi-channel alerts, MERGE/CPTEC precipitation ingestion, and LightGBM / multiple
+  linear regression water-level forecasts 30 to 120 minutes ahead. Developed and validated
+  in the field in Florianópolis, Brazil, as a Master's dissertation project at IFSC.
+type: software
+authors:
+  - family-names: Nuernberg
+    given-names: Alexandre
+    orcid: "https://orcid.org/0009-0005-7618-4269"
+    affiliation: "Instituto Federal de Santa Catarina (IFSC)"
+repository-code: "https://github.com/alexandreberg/SAPI_an_open_source_FEWS"
+license:
+  - AGPL-3.0-or-later
+  - CERN-OHL-S-2.0
+keywords:
+  - flood early warning
+  - LoRa
+  - IoT
+  - hydrological monitoring
+  - machine learning
+  - LightGBM
+  - STM32
+  - ESP32
+preferred-citation:
+  type: thesis
+  thesis-type: "Master's dissertation"
+  title: "Desenvolvimento e Validação do SAPI: Um Sistema Integrado de Monitoramento, Alerta e Predição de Inundações"
+  authors:
+    - family-names: Nuernberg
+      given-names: Alexandre
+      orcid: "https://orcid.org/0009-0005-7618-4269"
+  institution:
+    name: "Instituto Federal de Santa Catarina (IFSC), Programa de Pós-Graduação em Clima e Ambiente"
+    city: Florianópolis
+    country: BR
+  year: 2026

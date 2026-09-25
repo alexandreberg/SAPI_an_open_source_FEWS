@@ -1,0 +1,294 @@
+## Linear Regression Analysis
+## Short range test data
+
+
+Give a 'grep "REAL DISTANCE WITH TAPE METER" this-file' to find the results. 
+
+
+[US100-TEMP] Raw byte: 109 -> 64.0 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 30 cm
+[Ultrasonic] Corrected dist  : 26 cm  (= 0.933 x raw - 1.87)
+[Ultrasonic] US-100 int temp : 64.0 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 64.0 C
+  SHT20 (IP65) temp    : 26.94 C
+  Delta (US100 - SHT20): +37.1 C
+============================================
+
+
+
+Look at this log, where "REAL DISTANCE WITH TAPE METER:" is the distance from tghe US-100 top cover cap to the object:
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 17 cm
+[Ultrasonic] Corrected dist  : 14 cm  (= 0.933 x raw - 1.87) =====> REAL DISTANCE WITH TAPE METER: 15cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.06 C
+  Delta (US100 - SHT20): +0.2 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 21 cm
+[Ultrasonic] Corrected dist  : 18 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 20cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.08 C
+  Delta (US100 - SHT20): +0.2 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 26 cm
+[Ultrasonic] Corrected dist  : 22 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 25cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.11 C
+  Delta (US100 - SHT20): +0.1 C
+============================================
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 32 cm
+[Ultrasonic] Corrected dist  : 28 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 30cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.15 C
+  Delta (US100 - SHT20): +0.1 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 37 cm
+[Ultrasonic] Corrected dist  : 33 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 35cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.66 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 42 cm
+[Ultrasonic] Corrected dist  : 37 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 40cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.22 C
+  Delta (US100 - SHT20): +0.0 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 47 cm
+[Ultrasonic] Corrected dist  : 42 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 45cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.25 C
+  Delta (US100 - SHT20): +0.0 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 52 cm
+[Ultrasonic] Corrected dist  : 47 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 50cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.27 C
+  Delta (US100 - SHT20): -0.0 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 58 cm
+[Ultrasonic] Corrected dist  : 52 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 55cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.29 C
+  Delta (US100 - SHT20): -0.0 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 63 cm
+[Ultrasonic] Corrected dist  : 57 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 60cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.30 C
+  Delta (US100 - SHT20): -0.1 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 68 cm
+[Ultrasonic] Corrected dist  : 62 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 65cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.32 C
+  Delta (US100 - SHT20): -0.1 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 74 cm
+[Ultrasonic] Corrected dist  : 67 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 70cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.35 C
+  Delta (US100 - SHT20): -0.1 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 80 cm
+[Ultrasonic] Corrected dist  : 73 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 75cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.67 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 85 cm
+[Ultrasonic] Corrected dist  : 77 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 80cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.52 C
+  Delta (US100 - SHT20): -0.3 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 90 cm
+[Ultrasonic] Corrected dist  : 82 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 85cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.55 C
+  Delta (US100 - SHT20): -0.3 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 96 cm
+[Ultrasonic] Corrected dist  : 88 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 90cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.66 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 101 cm
+[Ultrasonic] Corrected dist  : 92 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 95cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.69 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 107 cm
+[Ultrasonic] Corrected dist  : 98 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 100cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.69 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+[US100-TEMP] Raw byte: 109 -> 27.2 C
+---------------------------------------------
+[Ultrasonic] Sensor: US-100
+[Ultrasonic] Valid readings  : 11/11
+[Ultrasonic] Raw distance    : 112 cm
+[Ultrasonic] Corrected dist  : 103 cm  (= 0.933 x raw - 1.87)=====> REAL DISTANCE WITH TAPE METER: 105cm
+[Ultrasonic] US-100 int temp : 27.2 C
+---------------------------------------------
+========== Temperature Comparison ==========
+  US-100 internal temp : 27.2 C
+  SHT20 (IP65) temp    : 27.69 C
+  Delta (US100 - SHT20): -0.4 C
+============================================
+
+
+
+Can we infer a specific distance offset about 3cm?
+

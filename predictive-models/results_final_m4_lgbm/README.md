@@ -25,8 +25,8 @@ in the dissertation. The M6 counterpart is [`../results_final_m6_mlr/`](../resul
 of which 28 are valid events** and 9 are excluded as sensor artifacts (Issue #227). The
 chronological split at `TRAIN_END = 2026-05-01` gives 17 train / 11 test events. It is built
 by [`../build_event_catalogue.py`](../build_event_catalogue.py). The earlier hand-curated
-20-event catalogue (`event_windows_v2.csv`) is archived in
-[`../legacy/`](../legacy/) and feeds nothing.
+20-event catalogue (`event_windows_v2.csv`) is archived in the
+development repository and feeds nothing.
 
 ## Output images (`output/`)
 
@@ -103,10 +103,9 @@ and the 50/60/75 cm thresholds):
   Issue #225).
 - The published RMSE and lead-time numbers are **out of sample** (test period from
   2026-05-01). For the figures and tables the dissertation uses, see
-  `Documentation/predictive_model/base_reescrita_dissertacao.md`, which is authoritative.
+  the dissertation and the audit report `../output_audit/auditoria_eventos_A3.pdf`.
 
 ## Related
 
 - Production config: `../production/config_production.py`
 - M6 comparison: `../results_final_m6_mlr/`
-- Dissertation images: `Documentation/predictive_model/methodology_images/m4_lgbm/`

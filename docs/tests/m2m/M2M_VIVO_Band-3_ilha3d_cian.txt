@@ -1,0 +1,117 @@
+0
+[MODEM] Checking if modem is already responding...
+[MODEM] Modem not responding. Pulsing PWRKEY (1.5 s)...
+[MODEM] Waiting 8 s for module to boot...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode 2 (NB-IoT)...
+[MODEM] Setting NB-IoT band to Band 3 â 1800 MHz...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 14 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 26 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 37 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 49 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 61 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 72 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 84 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 96 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 107 s
+[NET] AT+CREG?  â 
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,3
+
+OK
+[NET] Not registered yet. Elapsed: 119 s

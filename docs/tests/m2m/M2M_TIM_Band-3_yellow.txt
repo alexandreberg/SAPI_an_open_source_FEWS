@@ -1,0 +1,84 @@
+0
+[MODEM] Modem not responding. Pulsing PWRKEY (1.5 s)...
+[MODEM] Waiting 8 s for module to boot...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode 2 (NB-IoT)...
+[MODEM] Setting NB-IoT band to Band 3 â 1800 MHz...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
++PACSP1
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  â 
+DST: 0
+
+*PSUTTZ: 26/03/04,14:32:41","-12",0
+
++CREG: 0,0
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,1
+
+OK
+[NET] GSM (2G/3G) registered via CREG â
+[NET] Connecting GPRS | APN: iot.datatem.com.br
+[NET] GPRS connected | Local IP: 10.160.55.103
+
+--- Modem Diagnostics ---
+CCID:     <ICCID>
+IMEI:     <IMEI>
+Operator: TIM TIM
+Local IP: 10.160.55.103
+Signal:   13 CSQ (0-31, 99=unknown)
+AT+CPSI?: 
++CPSI: LTE NB-IOT,Online,724-04,0xAF3C,75508009,17,EUTRAN-BAND3,1352,0,0,-3,-88,-87,18
+
+OK
+
+-------------------------
+
+[SETUP] Ready. Starting transmission loop.
+[SETUP] Send interval: 30 s
+
+
+[LOOP] Reading #1 | CSQ: 13
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #2 | CSQ: 6
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #3 | CSQ: 3
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...

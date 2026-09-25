@@ -1,0 +1,222 @@
+14:38:49.551 Connected to CDC device
+14:38:52.154 
+14:38:53.705 ets Jul 29 2019 12:21:46
+14:38:53.705 
+14:38:53.705 rst:0x10 (RTCWDT_RTC_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+14:38:53.710 configsip: 0, SPIWP:0xee
+14:38:53.710 clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+14:38:53.716 mode:DIO, clock div:2
+14:38:53.722 load:0x3fff0030,len:1184
+14:38:53.722 load:0x40078000,len:13232
+14:38:53.727 load:0x40080400,len:3028
+14:38:53.727 entry 0x400805e4
+14:38:54.348 [   472][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+14:38:54.475 
+14:38:54.475 ==============================================
+14:38:54.475  SAPI Gateway - M2M Cellular Test
+14:38:54.480  Station ID 99 | FAKE DATA | Issue #37
+14:38:54.480 ==============================================
+14:38:54.985 [MODEM] Checking if modem is already responding...
+14:38:55.681 Connection lost
+14:39:17.047 Connected to CDC device
+14:39:17.047 ^P1�^@�[NET] AT+CREG?  → 
+14:39:18.203 +CPIN: READY
+14:39:18.201 
+14:39:18.201 SMS Ready
+14:39:18.201 
+14:39:18.201 +CREG: 0,2
+14:39:18.201 
+14:39:18.203 OK
+14:39:19.502 [NET] AT+CEREG? → 
+14:39:19.502 +CEREG: 0,3
+14:39:19.502 
+14:39:19.502 OK
+14:39:19.502 [NET] Not registered yet. Elapsed: 2 s
+14:39:29.902 [NET] AT+CREG?  → 
+14:39:29.902 +CREG: 0,2
+14:39:29.902 
+14:39:29.902 OK
+14:39:31.204 [NET] AT+CEREG? → 
+14:39:31.204 +CEREG: 0,2
+14:39:31.204 
+14:39:31.204 OK
+14:39:31.204 [NET] Not registered yet. Elapsed: 14 s
+14:39:41.604 [NET] AT+CREG?  → 
+14:39:41.604 +CREG: 0,2
+14:39:41.604 
+14:39:41.604 OK
+14:39:42.906 [NET] AT+CEREG? → 
+14:39:42.906 +CEREG: 0,2
+14:39:42.906 
+14:39:42.906 OK
+14:39:42.906 [NET] Not registered yet. Elapsed: 26 s
+14:39:53.306 [NET] AT+CREG?  → 
+14:39:53.306 +CREG: 0,2
+14:39:53.306 
+14:39:53.306 OK
+14:39:54.608 [NET] AT+CEREG? → 
+14:39:54.608 +CEREG: 0,2
+14:39:54.608 
+14:39:54.608 OK
+14:39:54.608 [NET] Not registered yet. Elapsed: 37 s
+14:40:05.008 [NET] AT+CREG?  → 
+14:40:05.008 +CREG: 0,2
+14:40:05.008 
+14:40:05.008 OK
+14:40:06.311 [NET] AT+CEREG? → 
+14:40:06.311 +CEREG: 0,2
+14:40:06.311 
+14:40:06.311 OK
+14:40:06.311 [NET] Not registered yet. Elapsed: 49 s
+14:40:16.710 [NET] AT+CREG?  → 
+14:40:16.710 +CREG: 0,2
+14:40:16.710 
+14:40:16.710 OK
+14:40:18.013 [NET] AT+CEREG? → 
+14:40:18.013 +CEREG: 0,2
+14:40:18.013 
+14:40:18.013 OK
+14:40:18.013 [NET] Not registered yet. Elapsed: 61 s
+14:40:28.412 [NET] AT+CREG?  → 
+14:40:28.412 +CREG: 0,2
+14:40:28.412 
+14:40:28.412 OK
+14:40:29.715 [NET] AT+CEREG? → 
+14:40:29.715 +CEREG: 0,2
+14:40:29.715 
+14:40:29.715 OK
+14:40:29.715 [NET] Not registered yet. Elapsed: 72 s
+14:40:40.114 [NET] AT+CREG?  → 
+14:40:40.114 +CREG: 0,2
+14:40:40.114 
+14:40:40.114 OK
+14:40:41.417 [NET] AT+CEREG? → 
+14:40:41.417 +CEREG: 0,2
+14:40:41.417 
+14:40:41.417 OK
+14:40:41.417 [NET] Not registered yet. Elapsed: 84 s
+14:40:51.816 [NET] AT+CREG?  → 
+14:40:51.816 +CREG: 0,2
+14:40:51.816 
+14:40:51.816 OK
+14:40:53.119 [NET] AT+CEREG? → 
+14:40:53.119 +CEREG: 0,2
+14:40:53.119 
+14:40:53.119 OK
+14:40:53.119 [NET] Not registered yet. Elapsed: 96 s
+14:41:03.519 [NET] AT+CREG?  → 
+14:41:03.519 +CREG: 0,2
+14:41:03.519 
+14:41:03.519 OK
+14:41:04.821 [NET] AT+CEREG? → 
+14:41:04.821 +CEREG: 0,2
+14:41:04.821 
+14:41:04.821 OK
+14:41:04.821 [NET] Not registered yet. Elapsed: 107 s
+14:41:15.221 [NET] AT+CREG?  → 
+14:41:15.221 +CREG: 0,2
+14:41:15.221 
+14:41:15.221 OK
+14:41:16.523 [NET] AT+CEREG? → 
+14:41:16.523 +CEREG: 0,2
+14:41:16.523 
+14:41:16.523 OK
+14:41:16.523 [NET] Not registered yet. Elapsed: 119 s
+14:41:26.923 [NET] AT+CREG?  → 
+14:41:26.923 +CREG: 0,2
+14:41:26.923 
+14:41:26.923 OK
+14:41:28.225 [NET] AT+CEREG? → 
+14:41:28.225 +CEREG: 0,2
+14:41:28.225 
+14:41:28.225 OK
+14:41:28.225 [NET] Not registered yet. Elapsed: 131 s
+14:41:38.625 [NET] AT+CREG?  → 
+14:41:38.625 +CREG: 0,2
+14:41:38.625 
+14:41:38.625 OK
+14:41:39.928 [NET] AT+CEREG? → 
+14:41:39.928 +CEREG: 0,2
+14:41:39.928 
+14:41:39.928 OK
+14:41:39.928 [NET] Not registered yet. Elapsed: 143 s
+14:41:50.327 [NET] AT+CREG?  → 
+14:41:50.327 +CREG: 0,2
+14:41:50.327 
+14:41:50.327 OK
+14:41:51.630 [NET] AT+CEREG? → 
+14:41:51.630 +CEREG: 0,2
+14:41:51.630 
+14:41:51.630 OK
+14:41:51.630 [NET] Not registered yet. Elapsed: 154 s
+14:42:02.029 [NET] AT+CREG?  → 
+14:42:02.029 +CREG: 0,2
+14:42:02.029 
+14:42:02.029 OK
+14:42:03.332 [NET] AT+CEREG? → 
+14:42:03.332 +CEREG: 0,2
+14:42:03.332 
+14:42:03.332 OK
+14:42:03.332 [NET] Not registered yet. Elapsed: 166 s
+14:42:13.731 [NET] AT+CREG?  → 
+14:42:13.731 +CREG: 0,2
+14:42:13.731 
+14:42:13.731 OK
+14:42:15.034 [NET] AT+CEREG? → 
+14:42:15.034 +CEREG: 0,2
+14:42:15.034 
+14:42:15.034 OK
+14:42:15.034 [NET] Not registered yet. Elapsed: 178 s
+14:42:24.134 [NET] ERROR: registration timeout after 180 s (CREG and CEREG both failed)
+14:42:24.140 [FATAL] Cellular connection failed. Restarting in 10 s...
+14:42:34.146 ets Jul 29 2019 12:21:46
+14:42:34.146 
+14:42:34.146 rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+14:42:34.152 configsip: 0, SPIWP:0xee
+14:42:34.152 clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+14:42:34.157 mode:DIO, clock div:2
+14:42:34.163 load:0x3fff0030,len:1184
+14:42:34.163 load:0x40078000,len:13232
+14:42:34.167 load:0x40080400,len:3028
+14:42:34.167 entry 0x400805e4
+14:42:34.788 [   472][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+14:42:34.915 
+14:42:34.915 ==============================================
+14:42:34.915  SAPI Gateway - M2M Cellular Test
+14:42:34.920  Station ID 99 | FAKE DATA | Issue #37
+14:42:34.920 ==============================================
+14:42:35.425 [MODEM] Checking if modem is already responding...
+14:42:35.425 [MODEM] Modem already on. Calling init()...
+14:42:35.444 [MODEM] Modem OK
+14:42:35.457 [MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+14:42:35.464 [MODEM] Info: SIM7000G R1529
+14:42:35.464 [MODEM] Disabling radio for clean configuration...
+14:42:36.223 [MODEM] Setting network mode 38 (LTE only)...
+14:42:36.433 [MODEM] Setting preferred mode LTE-M (CMNB=1)...
+14:42:36.641 [MODEM] Setting LTE-M band to Band 28 — 700 MHz...
+14:42:36.856 [MODEM] Re-enabling radio...
+14:42:37.090 [MODEM] Waiting 5 s for radio to start scanning...
+14:42:42.092 [NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+14:42:43.393 [NET] AT+CREG?  → 
+14:42:43.393 +CPIN: READY
+14:42:43.393 
+14:42:43.393 SMS Ready
+14:42:43.393 
+14:42:43.393 +CREG: 0,3
+14:42:43.393 
+14:42:43.395 OK
+14:42:44.694 [NET] AT+CEREG? → 
+14:42:44.694 +CEREG: 0,3
+14:42:44.694 
+14:42:44.694 OK
+14:42:44.694 [NET] Not registered yet. Elapsed: 2 s
+14:42:55.094 [NET] AT+CREG?  → 
+14:42:55.094 +CREG: 0,2
+14:42:55.094 
+14:42:55.094 OK
+14:42:56.396 [NET] AT+CEREG? → 
+14:42:56.396 +CEREG: 0,2
+14:42:56.396 
+14:42:56.396 OK
+14:42:56.396 [NET] Not registered yet. Elapsed: 14 s
+14:43:05.209 Connection lost

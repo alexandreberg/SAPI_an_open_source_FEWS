@@ -1,0 +1,100 @@
+0
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+[   472][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+
+==============================================
+ SAPI Gateway - M2M Cellular Test
+ Station ID 99 | FAKE DATA | Issue #37
+==============================================
+[MODEM] Checking if modem is already responding...
+[MODEM] Modem already on. Calling init()...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode NB-IoT (CMNB=2)...
+[MODEM] Setting NB-IoT band to Band 28 + Band 3 (auto)...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
++PACSP1
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,2
+
+OK
+[NET] Not registered yet. Elapsed: 2 s
+[NET] AT+CREG?  â 
+DST: 0
+
+*PSUTTZ: 26/03/04,19:42:50","-12",0
+
++CREG: 0,0
+
+OK
+[NET] AT+CEREG? â 
++CEREG: 0,1
+
+OK
+[NET] GSM (2G/3G) registered via CREG â
+[NET] Connecting GPRS | APN: iot.datatem.com.br
+[NET] GPRS connected | Local IP: 10.160.55.103
+
+--- Modem Diagnostics ---
+CCID:     <ICCID>
+IMEI:     <IMEI>
+Operator: TIM TIM
+Local IP: 10.160.55.103
+Signal:   22 CSQ (0-31, 99=unknown)
+AT+CPSI?: 
++CPSI: LTE NB-IOT,Online,724-04,0xAF3C,75508013,260,EUTRAN-BAND28,9362,0,0,-12,-82,-70,20
+
+OK
+
+-------------------------
+
+[SETUP] Ready. Starting transmission loop.
+[SETUP] Send interval: 30 s
+
+
+[LOOP] Reading #1 | CSQ: 22
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #2 | CSQ: 21
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #3 | CSQ: 12
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTP] POST http://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTP] Status: 200
+[HTTP] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] Transmission OK â
+[LOOP] Next send in 30 s...

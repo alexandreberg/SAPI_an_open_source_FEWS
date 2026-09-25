@@ -1,0 +1,159 @@
+0
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+[   473][I][esp32-hal-psram.c:96] psramInit(): PSRAM enabled
+
+==============================================
+ SAPI Gateway - M2M HTTPS Test (Issue #39)
+ Station ID 99 | FAKE DATA | SSLClient/BearSSL
+==============================================
+[MODEM] Checking if modem is already responding...
+[MODEM] Modem already on. Calling init()...
+[MODEM] Modem OK
+[MODEM] Name: SIMCOM_Ltd SIMCOM_SIM7000G
+[MODEM] Info: SIM7000G R1529
+[MODEM] Disabling radio for clean configuration...
+[MODEM] Setting network mode 38 (LTE only)...
+[MODEM] Setting preferred mode NB-IoT (CMNB=2)...
+[MODEM] Setting NB-IoT band to Band 28 + Band 3 (auto)...
+[MODEM] Re-enabling radio...
+[MODEM] Waiting 5 s for radio to start scanning...
+[NET] Polling AT+CEREG? for LTE registration (up to 180 s)...
+[NET] AT+CREG?  â 
++CPIN: READY
+
++PACSP1
+
+SMS Ready
+
++CREG: 0,2
+
+OK
+
+DST: 0
+
+*PSUTTZ: 26/03/06,13:57:51","-12",0
+[NET] AT+CEREG? â 
++CEREG: 0,1
+
+OK
+[NET] GSM registered via CREG â
+[NET] Connecting GPRS | APN: iot.datatem.com.br
+[NET] GPRS connected | Local IP: 10.160.55.103
+
+--- Modem Diagnostics ---
+CCID:     <ICCID>
+IMEI:     <IMEI>
+Operator: TIM TIM
+Local IP: 10.160.55.103
+Signal:   16 CSQ (0-31, 99=unknown)
+AT+CPSI?: 
++CPSI: LTE NB-IOT,Online,724-04,0xAF3C,75508013,260,EUTRAN-BAND28,9362,0,0,-3,-83,-82,18
+
+OK
+
+-------------------------
+
+[SETUP] Ready. Starting HTTPS transmission loop.
+[SETUP] Send interval: 30 s
+
+
+[LOOP] Reading #1 | CSQ: 16
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #2 | CSQ: 11
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #3 | CSQ: 10
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #4 | CSQ: 10
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #5 | CSQ: 9
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #6 | CSQ: 19
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #7 | CSQ: 10
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #8 | CSQ: 11
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #9 | CSQ: 12
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #10 | CSQ: 12
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #11 | CSQ: 12
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
+[HTTPS] Status: 200
+[HTTPS] Body:   {"success":true,"message":"Data received and stored successfully","station_id":99,"timestamp":"1970-01-01 00:00:00"}
+[LOOP] HTTPS Transmission OK â
+[LOOP] Next send in 30 s...
+
+[LOOP] Reading #12 | CSQ: 10
+[SERIAL] Payload: 212 bytes (MessagePack)
+[HTTPS] POST https://ilha3d.com/sapi/sensorData/receive-data.php
