@@ -12,6 +12,22 @@
  *   de           (string) — data/hora inicial (Y-m-d H:i)
  *   ate          (string) — data/hora final   (Y-m-d H:i)
  *   show_merge   (1|0)    — sobrepor prec_mm do MERGE
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 require_once 'header.php';
 
@@ -96,10 +112,9 @@ $periodoStr = $startDt->format('d/m/Y H:i') . ' até ' . $endDt->format('d/m/Y H
 // ── Busca dados de medições para cada estação selecionada ──────────────────
 /**
  * $seriesData — array de séries por estação.
- * Para level_cm inclui também as séries pré-filtradas pelo cron (Issue #57):
- *   valuesDelta  — level_delta_cm (null = rejeitado)
- *   valuesKalman — level_kalman_cm (null = rejeitado)
- *   hasDbFiltered — true se ao menos um ponto Kalman foi encontrado
+ * Para level_cm inclui também a série pré-filtrada pelo cron (Issue #57):
+ *   valuesDelta   — level_delta_cm (null = rejeitado)
+ *   hasDbFiltered — true se ao menos um ponto Δ filtrado foi encontrado
  */
 $seriesData = [];
 
@@ -124,8 +139,7 @@ if ($variavel && !empty($selectedIds)) {
             $stmtMeas = $pdo->prepare("
                 SELECT timestamp,
                        level_cm        AS value,
-                       level_delta_cm,
-                       level_kalman_cm
+                       level_delta_cm
                 FROM measurements
                 WHERE id_station = :id
                   AND deleted_at IS NULL
@@ -147,7 +161,6 @@ if ($variavel && !empty($selectedIds)) {
         $labels       = [];
         $values       = [];
         $valuesDelta  = [];
-        $valuesKalman = [];
         $hasDbFiltered = false;
 
         while ($row = $stmtMeas->fetch(PDO::FETCH_ASSOC)) {
@@ -161,11 +174,8 @@ if ($variavel && !empty($selectedIds)) {
             if ($variavel === 'level_cm') {
                 $dv = isset($row['level_delta_cm'])  && $row['level_delta_cm']  !== null
                       ? (float)$row['level_delta_cm']  : null;
-                $kv = isset($row['level_kalman_cm']) && $row['level_kalman_cm'] !== null
-                      ? (float)$row['level_kalman_cm'] : null;
-                $valuesDelta[]  = $dv;
-                $valuesKalman[] = $kv;
-                if (!$hasDbFiltered && $kv !== null) {
+                $valuesDelta[] = $dv;
+                if (!$hasDbFiltered && $dv !== null) {
                     $hasDbFiltered = true;
                 }
             }
@@ -177,7 +187,6 @@ if ($variavel && !empty($selectedIds)) {
             'labels'        => $labels,
             'values'        => $values,
             'valuesDelta'   => $valuesDelta,
-            'valuesKalman'  => $valuesKalman,
             'hasDbFiltered' => $hasDbFiltered,
         ];
     }
@@ -319,7 +328,7 @@ $palette = ['#007a33', '#8b5cf6', '#dc3545', '#fd7e14', '#e91e8c', '#20c997', '#
                 <div class="card-body">
                   <div class="mb-2 text-center">
                     <small class="text-muted">
-                      Use scroll ou arraste (retângulo) para dar zoom.
+                      Segure Ctrl e use o scroll, ou Shift e arraste (retângulo), para dar zoom.
                       Clique na legenda para ocultar/mostrar séries.
                     </small>
                   </div>
@@ -352,9 +361,8 @@ $palette = ['#007a33', '#8b5cf6', '#dc3545', '#fd7e14', '#e91e8c', '#20c997', '#
       <!--end::App Main-->
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -378,10 +386,9 @@ document.addEventListener('DOMContentLoaded', function () {
  * MERGE prec_mm usa eixo Y secundário (y2) quando habilitado.
  *
  * Para level_cm, quando dados pré-filtrados estão disponíveis (Issue #57),
- * são adicionadas três séries por estação com a mesma cor:
+ * são adicionadas duas séries por estação com a mesma cor:
  *   Raw    — linha fina, 40 % opacidade  (fundo)
- *   Delta  — linha média, 60 % opacidade (intermediária)
- *   Kalman — linha espessa, 100 % opacidade (foreground, mais proeminente)
+ *   Delta  — linha espessa, 100 % opacidade (foreground, mais proeminente)
  */
 const palette   = <?= json_encode($palette) ?>;
 const seriesRaw = <?= json_encode($seriesData, JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK) ?>;
@@ -417,23 +424,13 @@ seriesRaw.forEach((s, idx) => {
       tension: 0.25, pointRadius: 0, pointHoverRadius: 3,
       borderWidth: 1, fill: false, yAxisID: 'y1', spanGaps: false,
     });
-    // ── Delta: tracejado, cor com 65% opacidade ──
+    // ── Delta: linha espessa, cor plena — foreground ──
     datasets.push({
       label: s.name + ' (Δ filtrado)',
       data: s.labels.map((ts, i) => ({ x: ts, y: s.valuesDelta[i] })),
-      borderColor: hexToRgba(color, 0.65),
-      backgroundColor: hexToRgba(color, 0.05),
-      borderDash: [6, 4],
-      tension: 0.25, pointRadius: 0, pointHoverRadius: 3,
-      borderWidth: 1.5, fill: false, yAxisID: 'y1', spanGaps: false,
-    });
-    // ── Kalman: linha espessa, cor plena — foreground ──
-    datasets.push({
-      label: s.name + ' (Kalman)',
-      data: s.labels.map((ts, i) => ({ x: ts, y: s.valuesKalman[i] })),
       borderColor: color,
       backgroundColor: hexToRgba(color, 0.08),
-      tension: 0.35, pointRadius: 0, pointHoverRadius: 4,
+      tension: 0.25, pointRadius: 0, pointHoverRadius: 4,
       borderWidth: 2.5, fill: false, yAxisID: 'y1', spanGaps: false,
     });
   } else {
@@ -453,7 +450,7 @@ if (showMerge && mergeLabels.length) {
   datasets.push({
     label: 'MERGE prec_mm',
     data: mergeLabels.map((ts, i) => ({ x: ts, y: mergeValues[i] })),
-    borderColor: '#0dcaf0',          // ciano — distinto do nível (amarelo) e Kalman (roxo)
+    borderColor: '#0dcaf0',          // ciano — distinto das cores de estação usadas no nível
     backgroundColor: 'rgba(13,202,240,0.15)',
     tension: 0.25,
     pointRadius: 0,
@@ -501,7 +498,13 @@ const chartCompare = new Chart(ctx, {
       title: { display: true, text: 'Comparação — <?= addslashes($allowedVars[$variavel]) ?>' },
       zoom: {
         pan:  { enabled: true, mode: 'xy' },
-        zoom: { wheel: { enabled: true }, pinch: { enabled: true }, drag: { enabled: true }, mode: 'xy' }
+        // wheel zoom requires Ctrl (or Cmd) held — otherwise a normal page
+        // scroll with the mouse over the chart gets hijacked as a zoom
+        // gesture, silently zooming into a tiny window (reported bug).
+        // drag-zoom requires Shift held — a plain click (e.g. near the
+        // legend, or any click that drifts a few px on the canvas) must
+        // never trigger a zoom rectangle. threshold is a backup guard.
+        zoom: { wheel: { enabled: true, modifierKey: 'ctrl' }, pinch: { enabled: true }, drag: { enabled: true, threshold: 10, modifierKey: 'shift' }, mode: 'xy' }
       }
     },
     scales

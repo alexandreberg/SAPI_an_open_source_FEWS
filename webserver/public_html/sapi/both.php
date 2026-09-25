@@ -1,4 +1,21 @@
 <?php
+/**
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
 require_once 'header.php';
 
 // Conexão PDO
@@ -500,8 +517,7 @@ $viewUrl = 'view.php?' . http_build_query($viewParams);
     <!-- Scripts específicos da página -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -606,9 +622,15 @@ document.addEventListener('DOMContentLoaded', function () {
           legend: { display: true },
           zoom: {
             zoom: {
-              wheel: { enabled: true },
+              // wheel zoom requires Ctrl (or Cmd) held — otherwise a normal page
+              // scroll with the mouse over the chart gets hijacked as a zoom
+              // gesture, silently zooming into a tiny window (reported bug).
+              wheel: { enabled: true, modifierKey: 'ctrl' },
               pinch: { enabled: true },
-              drag:  { enabled: true },
+              // drag-zoom requires Shift held — a plain click (e.g. near the
+              // legend, or any click that drifts a few px on the canvas) must
+              // never trigger a zoom rectangle. threshold is a backup guard.
+              drag:  { enabled: true, threshold: 10, modifierKey: 'shift' },
               mode: 'x',
             },
             pan: {

@@ -16,6 +16,22 @@
  * aligned with the cron interval.
  *
  * @author Alexandre Nuernberg
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 require_once 'header.php';
@@ -641,6 +657,22 @@ function buildChart(canvasId, historyData, predM4, predM6, thresholds) {
             plugins: {
                 legend: {position: 'top'},
                 annotation: {annotations},
+                tooltip: {
+                    callbacks: {
+                        // Default date-fns adapter formats in the browser's
+                        // local timezone, clashing with the UTC-forced tick
+                        // labels above — force UTC here too so both agree.
+                        title: function(items) {
+                            if (!items.length) return '';
+                            const d = new Date(items[0].parsed.x);
+                            const dd = String(d.getUTCDate()).padStart(2, '0');
+                            const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+                            const hh = String(d.getUTCHours()).padStart(2, '0');
+                            const mi = String(d.getUTCMinutes()).padStart(2, '0');
+                            return `${dd}/${mm}/${d.getUTCFullYear()} ${hh}:${mi} UTC`;
+                        },
+                    },
+                },
             },
         },
     });

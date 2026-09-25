@@ -13,6 +13,22 @@
  *   - /home/<HOSTINGER_USER>/private_configs/sapi/mail_config.php with SMTP credentials
  *
  * @author Alexandre Nuernberg
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 // ── Load SMTP credentials once ────────────────────────────────────────────────
@@ -50,15 +66,31 @@ use PHPMailer\PHPMailer\Exception as MailException;
  * Falls back to a logged error (no mail sent) if PHPMailer is unavailable
  * or credentials are missing — never throws.
  *
- * @param string $to        Recipient email address.
- * @param string $subject   Email subject.
- * @param string $htmlBody  Full HTML body string.
- * @param string $fromName  Display name shown in the From header.
- *                          Defaults to SMTP_FROM_NAME from mail_config.php.
- * @return bool             True if PHPMailer accepted the message, false otherwise.
+ * @param string      $to                  Recipient email address.
+ * @param string      $subject             Email subject.
+ * @param string      $htmlBody            Full HTML body string. If it references
+ *                                         an embedded image, it must use
+ *                                         `src="cid:$embeddedImageCid"`.
+ * @param string      $fromName            Display name shown in the From header.
+ *                                         Defaults to SMTP_FROM_NAME from mail_config.php.
+ * @param string|null $embeddedImageBytes  Raw binary image bytes to embed inline
+ *                                         (Issue #190 — must be attached per-message,
+ *                                         never referenced by a mutable public URL,
+ *                                         since a URL can be overwritten by a later
+ *                                         alert before the recipient opens the email).
+ * @param string      $embeddedImageCid    Content-ID referenced by the HTML body's
+ *                                         `cid:` src. Required when
+ *                                         $embeddedImageBytes is not null.
+ * @return bool                            True if PHPMailer accepted the message, false otherwise.
  */
-function sendEmailViaSMTP(string $to, string $subject, string $htmlBody, string $fromName = ''): bool
-{
+function sendEmailViaSMTP(
+    string  $to,
+    string  $subject,
+    string  $htmlBody,
+    string  $fromName = '',
+    ?string $embeddedImageBytes = null,
+    string  $embeddedImageCid = ''
+): bool {
     if (!class_exists('PHPMailer\PHPMailer\PHPMailer')) {
         error_log('[email_helper] PHPMailer class not available — cannot send to ' . $to);
         return false;
@@ -86,6 +118,10 @@ function sendEmailViaSMTP(string $to, string $subject, string $htmlBody, string 
 
         $mail->setFrom(SAPI_SMTP_FROM, $displayName);
         $mail->addAddress($to);
+
+        if ($embeddedImageBytes !== null && $embeddedImageCid !== '') {
+            $mail->addStringEmbeddedImage($embeddedImageBytes, $embeddedImageCid, 'chart.png', 'base64', 'image/png');
+        }
 
         $mail->isHTML(true);
         $mail->Subject = $subject;

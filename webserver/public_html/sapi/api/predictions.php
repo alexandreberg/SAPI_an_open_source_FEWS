@@ -28,6 +28,22 @@
  *           or   {"error": "message"}
  *
  * @author Alexandre Nuernberg
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 error_reporting(E_ALL);
@@ -142,58 +158,31 @@ function buildPredictiveEmailBody(
         "Precipitação (6h): {$precipStr}\n";
 }
 
-/**
- * @brief Saves a base64-encoded chart PNG to the public charts directory.
- *
- * The file is named prediction_chart_s{stationId}.png and overwritten each
- * alert (one file per station, always the latest fired chart).
- *
- * @param int    $stationId  Station identifier.
- * @param string $chartB64   Base64-encoded PNG bytes.
- * @return string|null       Public HTTPS URL of the saved file, or null on failure.
- */
-function saveChartImage(int $stationId, string $chartB64): ?string
-{
-    // __DIR__ = /home/<HOSTINGER_USER>/public_html/sapi/api/
-    // dirname(__DIR__) = /home/<HOSTINGER_USER>/public_html/sapi/
-    $chartDir = dirname(__DIR__) . '/charts/';
-
-    if (!is_dir($chartDir) && !mkdir($chartDir, 0755, true)) {
-        error_log('[predictions.php] Cannot create charts dir: ' . $chartDir);
-        return null;
-    }
-
-    $pngBytes = base64_decode($chartB64, true);
-    if ($pngBytes === false) {
-        error_log('[predictions.php] Invalid base64 chart data for station ' . $stationId);
-        return null;
-    }
-
-    $filename = 'prediction_chart_s' . $stationId . '.png';
-    if (file_put_contents($chartDir . $filename, $pngBytes) === false) {
-        error_log('[predictions.php] Failed to write chart: ' . $chartDir . $filename);
-        return null;
-    }
-
-    return 'https://ilha3d.com/sapi/charts/' . $filename;
-}
+/** @var string Content-ID used to reference the embedded chart image from the HTML body. */
+const PRED_CHART_CID = 'predictionchart';
 
 /**
  * @brief Sends a predictive alert email via Gmail SMTP (PHPMailer).
  *
+ * The chart, when present, is embedded as inline image bytes (Content-ID),
+ * never referenced by a public URL — a URL points at a file that gets
+ * overwritten by the station's next alert, so an email opened later would
+ * show a chart from a different, later moment than when it was sent
+ * (Issue #190).
+ *
  * @param string      $to        Recipient email address.
  * @param string      $subject   Email subject line.
  * @param string      $body      Plain-text body.
- * @param string|null $chartUrl  Public URL of the chart PNG (fired only), or null.
+ * @param string|null $chartPng  Raw PNG bytes of the chart (fired only), or null.
  * @return bool                  True on success, false on failure.
  */
-function sendPredictiveEmail(string $to, string $subject, string $body, ?string $chartUrl = null): bool
+function sendPredictiveEmail(string $to, string $subject, string $body, ?string $chartPng = null): bool
 {
     $htmlBody  = '<div style="font-family:sans-serif;font-size:14px;line-height:1.6;">';
     $htmlBody .= nl2br(htmlspecialchars($body));
 
-    if ($chartUrl !== null) {
-        $htmlBody .= '<img src="' . htmlspecialchars($chartUrl) . '" '
+    if ($chartPng !== null) {
+        $htmlBody .= '<img src="cid:' . PRED_CHART_CID . '" '
                    . 'alt="Gráfico de previsão" '
                    . 'style="max-width:600px;width:100%;margin:16px 0;display:block;">';
     }
@@ -206,7 +195,7 @@ function sendPredictiveEmail(string $to, string $subject, string $body, ?string 
     $htmlBody .= 'Notificação gerada automaticamente pelo pipeline preditivo M4 LightGBM.</small>';
     $htmlBody .= '</div>';
 
-    $ok = sendEmailViaSMTP($to, $subject, $htmlBody, PRED_MAIL_FROM_NAME);
+    $ok = sendEmailViaSMTP($to, $subject, $htmlBody, PRED_MAIL_FROM_NAME, $chartPng, PRED_CHART_CID);
     if (!$ok) {
         error_log('[predictions.php] sendEmailViaSMTP() failed sending to ' . $to);
     }
@@ -275,12 +264,14 @@ function sendPredictiveNotifications(
         $precipRolling, $precipSource, $timestamp
     );
 
-    // Save chart PNG once; the URL is reused for every recipient
-    $chartUrl = null;
+    // Decode the chart PNG once; the bytes are embedded fresh in every recipient's
+    // email (Issue #190 — must not be saved to a shared/overwritable public URL).
+    $chartPng = null;
     if ($chartB64 !== null && $alertTransition === 'fired') {
-        $chartUrl = saveChartImage($stationId, $chartB64);
-        if ($chartUrl === null) {
-            error_log('[predictions.php] Chart save failed for station ' . $stationId . ' — email will have no image');
+        $chartPng = base64_decode($chartB64, true);
+        if ($chartPng === false) {
+            error_log('[predictions.php] Invalid base64 chart data for station ' . $stationId . ' — email will have no image');
+            $chartPng = null;
         }
     }
 
@@ -300,7 +291,7 @@ function sendPredictiveNotifications(
 
     $anySent = false;
     foreach ($contacts as $contact) {
-        $ok = sendPredictiveEmail($contact['email'], $subject, $body, $chartUrl);
+        $ok = sendPredictiveEmail($contact['email'], $subject, $body, $chartPng);
         if ($ok) {
             $anySent = true;
         }

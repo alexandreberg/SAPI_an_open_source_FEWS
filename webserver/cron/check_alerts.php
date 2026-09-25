@@ -25,6 +25,22 @@
  * The mail From address is defined by MAIL_FROM / MAIL_FROM_NAME below.
  *
  * @author Alexandre Nuernberg
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 // ── Bootstrap ──────────────────────────────────────────────────────────
@@ -90,11 +106,18 @@ function getStationName(PDO $pdo, int $stationId): string
  *
  * For 'precipitation_mm', returns the SUM over the last 60 minutes.
  *
- * For 'level_cm', uses the pre-computed level_kalman_cm column when a recent
- * Kalman-filtered value is available (populated by cron/filter_level.php,
- * Issue #57). This prevents false alerts from spurious HC-SR04/US-100 echoes.
- * Falls back to raw level_cm if no filtered value has been computed yet
- * (e.g., before the first filter_level.php run).
+ * For 'level_cm', uses the pre-computed level_delta_cm column when a recent
+ * delta-filtered value is available (populated by cron/filter_level.php).
+ * This rejects spurious HC-SR04/US-100 echoes (readings changing faster than
+ * physically possible) with zero added lag — unlike level_kalman_cm, which
+ * had 10-25 min of lag at flood peaks and would delay alert triggers by the
+ * same amount (Issue #63). Falls back to raw level_cm if no filtered value
+ * has been computed yet (e.g., before the first filter_level.php run).
+ *
+ * NOTE: level_kalman_cm was retired entirely on 2026-08-20 (UI + cron no
+ * longer write it) — it is kept only as a historical column. This function
+ * already preferred level_delta_cm since Issue #63 (2026-03-23 / 2026-08-13),
+ * so the retirement does not change alert behavior.
  *
  * For all other variables, returns the most-recent non-NULL raw reading.
  *
@@ -125,16 +148,17 @@ function getCurrentValue(PDO $pdo, int $stationId, string $variable): ?float
     }
 
     if ($variable === 'level_cm') {
-        // Prefer pre-filtered Kalman value (Issue #57) to avoid false alerts
-        // from spurious ultrasonic echoes.
+        // Prefer the delta-filtered value (Issue #63) to avoid false alerts
+        // from spurious ultrasonic echoes, without the lag level_kalman_cm
+        // would introduce at the alert trigger.
         // "Recent" = within the last 10 minutes (2× the cron interval of 5 min).
         $stmt = $pdo->prepare(
-            "SELECT level_kalman_cm AS val
+            "SELECT level_delta_cm AS val
              FROM measurements
-             WHERE id_station      = ?
-               AND deleted_at      IS NULL
-               AND level_kalman_cm IS NOT NULL
-               AND timestamp       >= DATE_SUB(NOW(), INTERVAL 10 MINUTE)
+             WHERE id_station     = ?
+               AND deleted_at     IS NULL
+               AND level_delta_cm IS NOT NULL
+               AND timestamp      >= DATE_SUB(NOW(), INTERVAL 10 MINUTE)
              ORDER BY timestamp DESC
              LIMIT 1"
         );
@@ -142,7 +166,7 @@ function getCurrentValue(PDO $pdo, int $stationId, string $variable): ?float
         $row = $stmt->fetch();
 
         if ($row && $row['val'] !== null) {
-            return (float)$row['val']; // Kalman-filtered value
+            return (float)$row['val']; // Delta-filtered value
         }
 
         // Fallback: raw level_cm (cron not yet run, or too old)

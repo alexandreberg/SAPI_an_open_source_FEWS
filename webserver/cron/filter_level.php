@@ -1,7 +1,7 @@
 <?php
 /**
  * @file filter_level.php
- * @brief Cron script — applies delta filter + Kalman smoother to level_cm.
+ * @brief Cron script — applies a delta (rate-of-change) filter to level_cm.
  *
  * Runs every 5 minutes via Hostinger cPanel → Advanced → Cron Jobs:
  *   * /5 * * * *  /usr/bin/php /home/<HOSTINGER_USER>/cron/filter_level.php
@@ -22,11 +22,15 @@
  *   1. Hard physical limit check (0–500 cm) — rejects firmware crash values.
  *   2. Delta (rate-of-change) filter — rejects physically impossible transients.
  *      Threshold scales with elapsed time: maxDelta × elapsed_minutes.
- *   3. 1-D Kalman smoother applied to accepted readings only.
  *
- * Output columns written to measurements:
- *   level_delta_cm  — level_cm value if accepted by both filters, NULL if rejected.
- *   level_kalman_cm — Kalman-smoothed estimate, NULL if row was rejected.
+ * Output column written to measurements:
+ *   level_delta_cm  — level_cm value if accepted by the filter, NULL if rejected.
+ *
+ * NOTE: this script previously also wrote a Kalman-smoothed estimate to
+ * level_kalman_cm (Issue #57). The Kalman step was retired — the UI no
+ * longer shows it, and cron/check_alerts.php now reads level_delta_cm
+ * instead. level_kalman_cm is kept as a column (historical values remain
+ * for old rows) but is no longer written for new rows.
  *
  * Incremental processing: only rows where level_delta_cm IS NULL AND
  * level_cm IS NOT NULL are processed. On first run this backfills all history.
@@ -35,6 +39,22 @@
  * admin UI / station_filter_config DB table).
  *
  * @author Alexandre Nuernberg
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 // ── Bootstrap ────────────────────────────────────────────────────────────────
@@ -79,9 +99,7 @@ $pdo = db();
  *   maxSensorRange: float,
  *   hardMin: float,
  *   hardMax: float,
- *   maxDelta: float,
- *   kalmanQ: float,
- *   kalmanR: float
+ *   maxDelta: float
  * }>
  *
  * levelZero      — sensor mounting reference (levelZero − distance_raw = level_cm).
@@ -92,8 +110,6 @@ $pdo = db();
  *                  Calibrated from real flood events (2025-2026 historical data):
  *                  fastest observed rise ~2 cm/min; 5 cm/min gives a safe margin
  *                  while firmly rejecting sensor slow-drift (~13-15 cm/min equivalent).
- * kalmanQ        — process noise (lower = smoother, slower to react to real changes).
- * kalmanR        — measurement noise (higher = heavier smoothing on accepted readings).
  */
 const STATION_CONFIG = [
     1 => [
@@ -102,8 +118,6 @@ const STATION_CONFIG = [
         'hardMin'        => 0.0,
         'hardMax'        => 500.0,
         'maxDelta'       => 5.0,
-        'kalmanQ'        => 1.0,
-        'kalmanR'        => 200.0,
     ],
     3 => [
         'levelZero'      => 236.0,
@@ -111,40 +125,8 @@ const STATION_CONFIG = [
         'hardMin'        => 0.0,
         'hardMax'        => 500.0,
         'maxDelta'       => 5.0,
-        'kalmanQ'        => 1.0,
-        'kalmanR'        => 200.0,
     ],
 ];
-
-// ── Kalman filter (1-D scalar) ────────────────────────────────────────────────
-/**
- * @brief Applies a 1-D Kalman filter to a single new observation,
- *        updating the filter state in place.
- *
- * The filter state ($x, $P) must be seeded before the first call and
- * carried across iterations (passed by reference).
- *
- * Kalman equations (scalar):
- *   Predict:  P⁻ = P + Q
- *   Gain:     K  = P⁻ / (P⁻ + R)
- *   Update:   x  = x + K * (z − x)
- *             P  = (1 − K) * P⁻
- *
- * @param float  $z  New observation (accepted level_cm value).
- * @param float &$x  Current state estimate (updated in place).
- * @param float &$P  Current error covariance (updated in place).
- * @param float  $Q  Process noise variance.
- * @param float  $R  Measurement noise variance.
- * @return float     Filtered estimate.
- */
-function kalmanUpdate(float $z, float &$x, float &$P, float $Q, float $R): float
-{
-    $Pp = $P + $Q;              // predicted covariance
-    $K  = $Pp / ($Pp + $R);     // Kalman gain
-    $x  = $x + $K * ($z - $x); // state update
-    $P  = (1.0 - $K) * $Pp;    // covariance update
-    return $x;
-}
 
 // ── Per-station processing ────────────────────────────────────────────────────
 /**
@@ -176,22 +158,22 @@ function fetchUnprocessed(PDO $pdo, int $stationId): array
 }
 
 /**
- * @brief Fetches the Kalman state from the last accepted (non-NULL) processed row.
+ * @brief Fetches the last accepted (non-NULL) processed row for a station.
  *
- * Used to seed the Kalman filter when resuming incremental processing,
- * so the filter memory is not lost between cron runs.
+ * Used to seed the delta filter when resuming incremental processing,
+ * so the "last valid value/timestamp" memory is not lost between cron runs.
  *
  * Returns null if no previously processed row exists (first run).
  *
  * @param PDO $pdo        Database connection.
  * @param int $stationId  Station primary key.
- * @return array|null     Associative array with 'level_delta_cm' and
- *                        'level_kalman_cm', or null.
+ * @return array|null     Associative array with 'timestamp' and
+ *                        'level_delta_cm', or null.
  */
 function fetchLastAccepted(PDO $pdo, int $stationId): ?array
 {
     $stmt = $pdo->prepare(
-        "SELECT timestamp, level_delta_cm, level_kalman_cm
+        "SELECT timestamp, level_delta_cm
          FROM measurements
          WHERE id_station     = :sid
            AND level_delta_cm IS NOT NULL
@@ -205,26 +187,23 @@ function fetchLastAccepted(PDO $pdo, int $stationId): ?array
 }
 
 /**
- * @brief Writes level_delta_cm and level_kalman_cm back to a measurements row.
+ * @brief Writes level_delta_cm back to a measurements row.
  *
  * @param PDO        $pdo     Database connection.
  * @param int        $id      measurements.id primary key.
  * @param float|null $delta   Accepted level value, or null if rejected.
- * @param float|null $kalman  Kalman estimate, or null if rejected.
  * @return void
  */
-function writeFiltered(PDO $pdo, int $id, ?float $delta, ?float $kalman): void
+function writeFiltered(PDO $pdo, int $id, ?float $delta): void
 {
     $stmt = $pdo->prepare(
         "UPDATE measurements
-         SET level_delta_cm  = :delta,
-             level_kalman_cm = :kalman
+         SET level_delta_cm = :delta
          WHERE id = :id"
     );
     $stmt->execute([
-        ':delta'  => $delta,
-        ':kalman' => $kalman,
-        ':id'     => $id,
+        ':delta' => $delta,
+        ':id'    => $id,
     ]);
 }
 
@@ -238,16 +217,14 @@ foreach (STATION_CONFIG as $stationId => $cfg) {
     }
 
     // ── Seed filter state ──────────────────────────────────────────────────
-    // Try to resume from the last accepted row so the Kalman state is preserved
-    // across incremental runs.
+    // Try to resume from the last accepted row so the delta-filter state is
+    // preserved across incremental runs.
     $lastAccepted = fetchLastAccepted($pdo, $stationId);
 
     if ($lastAccepted !== null) {
-        // Resume: seed from last accepted delta value and Kalman estimate
+        // Resume: seed from last accepted delta value
         $lastValidValue     = (float)$lastAccepted['level_delta_cm'];
         $lastValidTimestamp = new DateTime($lastAccepted['timestamp']);
-        $kalmanX            = (float)$lastAccepted['level_kalman_cm'];
-        $kalmanP            = 1.0; // restart covariance — conservative but correct
     } else {
         // First run: seed from the first valid raw reading in the batch
         $seeded = false;
@@ -256,8 +233,6 @@ foreach (STATION_CONFIG as $stationId => $cfg) {
             if ($v >= $cfg['hardMin'] && $v <= $cfg['hardMax']) {
                 $lastValidValue     = $v;
                 $lastValidTimestamp = new DateTime($row['timestamp']);
-                $kalmanX            = $v;
-                $kalmanP            = 1.0;
                 $seeded = true;
                 break;
             }
@@ -289,17 +264,17 @@ foreach (STATION_CONFIG as $stationId => $cfg) {
         $rowTs = new DateTime($row['timestamp']);
 
         // 0. Manual bad-data flag (flag = 'b' set via admin/phpMyAdmin).
-        //    Treat as an invalid gap: write NULL/NULL but do NOT advance
+        //    Treat as an invalid gap: write NULL but do NOT advance
         //    lastValid — the flagged period does not contaminate the seed.
         if (($row['flag'] ?? null) === 'b') {
-            writeFiltered($pdo, $id, null, null);
+            writeFiltered($pdo, $id, null);
             $flagged++;
             continue;
         }
 
         // 1. Hard physical limit check (catches SMALLINT_MAX crash values)
         if ($v < $cfg['hardMin'] || $v > $cfg['hardMax']) {
-            writeFiltered($pdo, $id, null, null);
+            writeFiltered($pdo, $id, null);
             $rejected++;
             // Do not update lastValidTimestamp — the gap continues
             continue;
@@ -311,7 +286,7 @@ foreach (STATION_CONFIG as $stationId => $cfg) {
 
         // Guard against non-monotonic timestamps (duplicate or out-of-order rows)
         if ($elapsedMin <= 0) {
-            writeFiltered($pdo, $id, null, null);
+            writeFiltered($pdo, $id, null);
             $rejected++;
             continue;
         }
@@ -320,16 +295,14 @@ foreach (STATION_CONFIG as $stationId => $cfg) {
 
         if (abs($v - $lastValidValue) > $maxAllowedDelta) {
             // Physically impossible rate of change — spurious echo or firmware glitch
-            writeFiltered($pdo, $id, null, null);
+            writeFiltered($pdo, $id, null);
             $rejected++;
             // Gap grows; threshold scales with elapsed time automatically next iteration
             continue;
         }
 
-        // 3. Row accepted — apply Kalman smoother
-        $kalmanEstimate = kalmanUpdate($v, $kalmanX, $kalmanP, $cfg['kalmanQ'], $cfg['kalmanR']);
-
-        writeFiltered($pdo, $id, $v, round($kalmanEstimate, 2));
+        // 3. Row accepted
+        writeFiltered($pdo, $id, $v);
 
         // Advance state
         $lastValidValue     = $v;

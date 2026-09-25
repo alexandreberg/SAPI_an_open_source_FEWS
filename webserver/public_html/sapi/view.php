@@ -1,4 +1,21 @@
 <?php
+/**
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ * Copyright (C) 2024–2026 Alexandre Nuernberg <alexandreberg@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
 require_once 'header.php';
 
 // Conexão PDO
@@ -39,14 +56,6 @@ $allowedVars = [
     's_wifi'                => 'Sinal Wi-Fi',
     's_gsm'                 => 'Sinal GSM',
 ];
-
-/**
- * Variables for which the Kalman filter button is shown.
- * Only level readings benefit from it — temperature, pressure, humidity,
- * voltages and precipitation are smooth signals or discrete events where
- * Kalman adds no value or is misleading.
- */
-$kalmanVars = ['level_cm', 'surface_temperature_C'];
 
 /**
  * Limites físicos válidos por variável (Issue #56).
@@ -141,8 +150,7 @@ if ($variavel === 'level_cm') {
     $sql = "
         SELECT timestamp, flag,
                `level_cm`       AS value,
-               level_delta_cm,
-               level_kalman_cm
+               level_delta_cm
         FROM measurements
         WHERE id_station = :id_station
           AND deleted_at IS NULL
@@ -169,8 +177,7 @@ $stmt->execute([
 $labels       = [];
 $values       = [];
 $valuesDelta  = []; // level_delta_cm — após filtro delta (null = rejeitado)
-$valuesKalman = []; // level_kalman_cm — após Kalman (null = rejeitado)
-$hasDbFiltered = false; // true se o cron já populou dados Kalman para este período
+$hasDbFiltered = false; // true se o cron já populou level_delta_cm para este período
 
 // Limites físicos da variável atual (null = sem limite definido)
 $limMin = $varLimits[$variavel][0] ?? null;
@@ -201,15 +208,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $labels[] = $ts;
     $values[] = $v;
 
-    // Coleta séries pré-filtradas (Issue #57) para level_cm
+    // Coleta série pré-filtrada (Issue #57) para level_cm
     if ($variavel === 'level_cm') {
         $dv = isset($row['level_delta_cm'])  && $row['level_delta_cm']  !== null
               ? (float)$row['level_delta_cm']  : null;
-        $kv = isset($row['level_kalman_cm']) && $row['level_kalman_cm'] !== null
-              ? (float)$row['level_kalman_cm'] : null;
-        $valuesDelta[]  = $dv;
-        $valuesKalman[] = $kv;
-        if (!$hasDbFiltered && $kv !== null) {
+        $valuesDelta[] = $dv;
+        if (!$hasDbFiltered && $dv !== null) {
             $hasDbFiltered = true; // cron já processou pelo menos um ponto neste período
         }
     }
@@ -252,22 +256,23 @@ if ($variavel === 'precipitation_mm') {
 $tituloVariavel = $allowedVars[$variavel];
 $periodoStr = $startDt->format('d/m/Y H:i') . ' até ' . $endDt->format('d/m/Y H:i');
 
-// Limites do eixo Y baseados na série Kalman (Issue #61 — smart Y default).
+// Limites do eixo Y baseados na série Δ filtrado (Issue #61 — smart Y default).
 // Quando hasDbFiltered=true os picos da série bruta não devem dominar a escala
-// inicial; o eixo é inicializado com o intervalo da série Kalman × 1.3 de margem.
-// Null quando não há dados Kalman (JS mantém auto-scale padrão do Chart.js).
-$kalmanYMin = null;
-$kalmanYMax = null;
+// inicial; o eixo é inicializado com o intervalo da série Δ filtrado × 1.3 de
+// margem. Null quando não há dados filtrados (JS mantém auto-scale padrão do
+// Chart.js).
+$yAxisMin = null;
+$yAxisMax = null;
 if ($hasDbFiltered) {
-    $nonNull = array_filter($valuesKalman, fn($v) => $v !== null);
+    $nonNull = array_filter($valuesDelta, fn($v) => $v !== null);
     if (!empty($nonNull)) {
-        $kMin = min($nonNull);
-        $kMax = max($nonNull);
-        $margin = ($kMax - $kMin) * 0.3;
+        $dMin = min($nonNull);
+        $dMax = max($nonNull);
+        $margin = ($dMax - $dMin) * 0.3;
         // Garante margem mínima de 5 cm para séries muito estáveis
         if ($margin < 5) $margin = 5;
-        $kalmanYMin = max(0, $kMin - $margin);
-        $kalmanYMax = $kMax + $margin;
+        $yAxisMin = max(0, $dMin - $margin);
+        $yAxisMax = $dMax + $margin;
     }
 }
 
@@ -290,7 +295,7 @@ if ($variavel === 'precipitation_mm' && !empty($labels)) {
         $total = 0.0;
         foreach ($lbs as $i => $ts) {
             $dt = new DateTime($ts);
-            if ($dt >= $from && $dt <= $windowEndDt && $vals[$i] !== null) {
+            if ($dt >= $from && $dt <= $windowEndDt && ($vals[$i] ?? null) !== null) {
                 $total += (float)$vals[$i];
             }
         }
@@ -308,7 +313,7 @@ if ($variavel === 'precipitation_mm' && !empty($labels)) {
     $sumDay = function (array $lbs, array $vals, string $day): float {
         $total = 0.0;
         foreach ($lbs as $i => $ts) {
-            if (substr($ts, 0, 10) === $day && $vals[$i] !== null) {
+            if (substr($ts, 0, 10) === $day && ($vals[$i] ?? null) !== null) {
                 $total += (float)$vals[$i];
             }
         }
@@ -326,7 +331,7 @@ if ($variavel === 'precipitation_mm' && !empty($labels)) {
     $sumMonth = function (array $lbs, array $vals, string $ym): float {
         $total = 0.0;
         foreach ($lbs as $i => $ts) {
-            if (substr($ts, 0, 7) === $ym && $vals[$i] !== null) {
+            if (substr($ts, 0, 7) === $ym && ($vals[$i] ?? null) !== null) {
                 $total += (float)$vals[$i];
             }
         }
@@ -489,7 +494,7 @@ $bothUrl = 'both.php?' . http_build_query($bothParams);
 
                                           <!-- Legenda das linhas -->
                     <div class="mb-2 text-center">
-                      <small class="text-muted">Use scroll do mouse ou arraste (retângulo) para dar zoom.</small>
+                      <small class="text-muted">Segure Ctrl e use o scroll, ou Shift e arraste (retângulo), para dar zoom.</small>
                     </div>
 
                     <!-- Container manda no tamanho, não o canvas -->
@@ -502,7 +507,7 @@ $bothUrl = 'both.php?' . http_build_query($bothParams);
 
                         <!-- Botões de visibilidade das séries -->
                         <?php if ($hasDbFiltered): ?>
-                        <!-- DB filtered: 3 botões independentes (Issue #57) -->
+                        <!-- DB filtered: 2 botões independentes (Issue #57) -->
                         <button type="button" id="btnBruto"
                                 class="btn btn-warning btn-sm me-1"
                                 onclick="toggleSeries(0, this)">
@@ -512,23 +517,6 @@ $bothUrl = 'both.php?' . http_build_query($bothParams);
                                 class="btn btn-secondary btn-sm me-1"
                                 onclick="toggleSeries(1, this)">
                           Δ Filtrado
-                        </button>
-                        <button type="button" id="btnKalmanDb"
-                                class="btn btn-secondary btn-sm me-1"
-                                onclick="toggleSeries(2, this)">
-                          Kalman
-                        </button>
-                        <?php elseif (in_array($variavel, $kalmanVars)): ?>
-                        <!-- Fallback JS Kalman (cron ainda não rodou para este período) -->
-                        <button type="button" id="btnBrutoJs"
-                                class="btn btn-warning btn-sm me-1"
-                                onclick="toggleSeries(0, this)">
-                          Bruto
-                        </button>
-                        <button type="button" id="btnKalmanJs"
-                                class="btn btn-outline-secondary btn-sm me-1"
-                                onclick="toggleKalman(this)">
-                          <i class="bi bi-activity me-1"></i>Kalman
                         </button>
                         <?php endif; ?>
 
@@ -624,10 +612,9 @@ $bothUrl = 'both.php?' . http_build_query($bothParams);
 
     <!-- Scripts específicos da página -->
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -670,9 +657,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const labels  = <?= json_encode($labels) ?>;
   const valores = <?= json_encode($values, JSON_NUMERIC_CHECK) ?>;
 
-  // Séries pré-filtradas pelo cron (Issue #57) — null = rejeitado/não processado
+  // Série pré-filtrada pelo cron (Issue #57) — null = rejeitado/não processado
   const valoresDelta  = <?= json_encode($valuesDelta,  JSON_NUMERIC_CHECK) ?>;
-  const valoresKalman = <?= json_encode($valuesKalman, JSON_NUMERIC_CHECK) ?>;
   const hasDbFiltered = <?= $hasDbFiltered ? 'true' : 'false' ?>;
 
   // MERGE satellite series (Issue #135) — populated only when var=precipitation_mm
@@ -803,27 +789,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Y-axis auto-escala com base nos dados já filtrados pelo PHP.
     // Quando hasDbFiltered=true (Issue #61) o eixo é inicializado com os limites
-    // da série Kalman × 1.3 de margem para evitar que picos da série bruta
+    // da série Δ filtrado × 1.3 de margem para evitar que picos da série bruta
     // comprimam o nível real na base do gráfico.
     // O utilizador pode ver todos os dados (incluindo picos) com "Redefinir zoom"
     // ou duplo clique no gráfico.
     const yScaleOpts = {
       title: { display: true, text: '<?= addslashes($tituloVariavel) ?>' }
     };
-    <?php if ($kalmanYMin !== null && $kalmanYMax !== null): ?>
-    yScaleOpts.min = <?= json_encode($kalmanYMin) ?>;
-    yScaleOpts.max = <?= json_encode($kalmanYMax) ?>;
+    <?php if ($yAxisMin !== null && $yAxisMax !== null): ?>
+    yScaleOpts.min = <?= json_encode($yAxisMin) ?>;
+    yScaleOpts.max = <?= json_encode($yAxisMax) ?>;
     <?php endif; ?>
 
-    // ── Datasets — ordem de renderização: raw → delta → kalman ──────────────
-    // Raw: amarelo (background). Delta: laranja (camada intermediária).
-    // Kalman: roxo (foreground, mais proeminente visualmente).
+    // ── Datasets — ordem de renderização: raw → delta ────────────────────────
+    // Raw: ciano/turquesa (background). Delta: roxo (foreground).
     // Chart.js renderiza datasets na ordem do array — o último fica por cima.
     const datasets = [{
       label: '<?= addslashes($tituloVariavel) ?>',
       data: valores,
-      borderColor: '#eab308',               // amarelo — série bruta
-      backgroundColor: 'rgba(234,179,8,0.10)',
+      // Ciano/turquesa (não o mesmo tom do MERGE #0dcaf0, para não repetir o
+      // conflito do Issue #207 quando ambas as séries aparecem juntas — Issue #209).
+      borderColor: '#14b8a6',               // turquesa — série bruta (principal, sem filtro)
+      backgroundColor: 'rgba(20,184,166,0.10)',
       tension: 0.3,
       pointRadius: 2,
       pointHoverRadius: 4,
@@ -833,14 +820,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }];
 
     if (hasDbFiltered) {
-      // Série delta: laranja tracejado — bruto pós-filtro de taxa de variação.
-      // borderDash torna a série visualmente distinta do amarelo mesmo quando
-      // se sobrepõem (dados limpos): amarelo sólido fino + laranja tracejado.
+      // Série delta: roxo tracejado — bruto pós-filtro de taxa de variação.
+      // borderDash torna a série visualmente distinta do turquesa mesmo quando
+      // se sobrepõem (dados limpos): turquesa sólido fino + roxo tracejado.
+      // Roxo (não laranja) evita conflito visual com as anotações ±1σ/±2σ/±3σ,
+      // que também são laranja tracejado (Issue #207).
       datasets.push({
         label: '<?= addslashes($tituloVariavel) ?> (Δ filtrado)',
         data: valoresDelta,
-        borderColor: '#f97316',             // laranja
-        backgroundColor: 'rgba(249,115,22,0.08)',
+        borderColor: '#7c3aed',             // roxo/violeta
+        backgroundColor: 'rgba(124,58,237,0.08)',
         borderDash: [6, 4],                 // tracejado: 6px traço, 4px espaço
         tension: 0.3,
         pointRadius: 0,
@@ -848,19 +837,6 @@ document.addEventListener('DOMContentLoaded', function () {
         borderWidth: 2,
         fill: false,
         spanGaps: false,                    // interrompe linha em pontos rejeitados (null)
-      });
-      // Série Kalman: roxo sólido espesso — suavizado final (foreground).
-      datasets.push({
-        label: '<?= addslashes($tituloVariavel) ?> (Kalman)',
-        data: valoresKalman,
-        borderColor: '#8b5cf6',             // roxo
-        backgroundColor: 'rgba(139,92,246,0.08)',
-        tension: 0.4,
-        pointRadius: 0,
-        pointHoverRadius: 3,
-        borderWidth: 2.5,
-        fill: false,
-        spanGaps: false,
       });
     }
 
@@ -898,9 +874,15 @@ document.addEventListener('DOMContentLoaded', function () {
               onPanComplete: () => atualizarEstatisticas()
             },
             zoom: {
-              wheel: { enabled: true },
+              // wheel zoom requires Ctrl (or Cmd) held — otherwise a normal page
+              // scroll with the mouse over the chart gets hijacked as a zoom
+              // gesture, silently zooming into a tiny window (reported bug).
+              wheel: { enabled: true, modifierKey: 'ctrl' },
               pinch: { enabled: true },
-              drag: { enabled: true },
+              // drag-zoom requires Shift held — a plain click (e.g. near the
+              // legend, or any click that drifts a few px on the canvas) must
+              // never trigger a zoom rectangle. threshold is a backup guard.
+              drag: { enabled: true, threshold: 10, modifierKey: 'shift' },
               mode: 'xy',
               onZoomComplete: () => atualizarEstatisticas()
             }
@@ -941,91 +923,6 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.style.opacity = vis ? '1' : '0.4';
     }
     window.toggleSeries = toggleSeries;
-
-    // ── Filtro de Kalman JS (Issue #56 fallback) ─────────────────────────────
-    // Mostrado apenas quando o cron ainda não populou level_kalman_cm (hasDbFiltered=false).
-    // Quando hasDbFiltered=true, a série Kalman já foi adicionada via DB acima.
-    <?php if (in_array($variavel, $kalmanVars) && !$hasDbFiltered): ?>
-    /**
-     * Aplica um filtro de Kalman escalar (1-D) à série de valores.
-     *
-     * Parâmetros padrão calibrados para level_cm (~1 min de amostragem):
-     *   Q = variância do processo (ruído de transição de estado)
-     *   R = variância da medição  (ruído do sensor)
-     *
-     * Para uma variável mais ruidosa (p.ex. nível com HC-SR04) use R maior.
-     * Para variáveis mais estáveis (temperatura) reduza Q e R.
-     *
-     * Padrões calibrados para level_cm com amostragem ~1 min:
-     *   Q=1, R=200 — rejeita bem picos esporádicos do HC-SR04 sem atrasar
-     *               demais a resposta a mudanças reais de nível.
-     *
-     * @param {number[]} obs - Array de observações brutas
-     * @param {number}   Q   - Process noise (padrão 1)
-     * @param {number}   R   - Measurement noise (padrão 200)
-     * @returns {number[]} Série suavizada
-     */
-    function kalman1D(obs, Q = 1, R = 200) {
-      if (!obs.length) return [];
-      let x = obs[0]; // estimativa inicial de estado
-      let P = 1;      // estimativa inicial de covariância
-      return obs.map(z => {
-        // Predição
-        const Pp = P + Q;
-        // Atualização (ganho de Kalman)
-        const K = Pp / (Pp + R);
-        x = x + K * (z - x);
-        P = (1 - K) * Pp;
-        return x;
-      });
-    }
-
-    // Índice do dataset Kalman (null = ainda não adicionado)
-    let kalmanDatasetIndex = null;
-    let kalmanVisible = false;
-
-    /**
-     * Alterna a visibilidade da série Kalman JS (fallback — só quando hasDbFiltered=false).
-     * Na primeira ativação computa os valores filtrados e adiciona o dataset.
-     *
-     * @param {HTMLElement} btn - O elemento botão que disparou o evento.
-     */
-    function toggleKalman(btn) {
-      if (kalmanDatasetIndex === null) {
-        // Primeira vez: calcula Kalman e adiciona dataset
-        const raw      = chart.data.datasets[0].data.map(v => (typeof v === 'number' ? v : parseFloat(v)));
-        const smoothed = kalman1D(raw);
-
-        chart.data.datasets.push({
-          label: '<?= addslashes($tituloVariavel) ?> (Kalman)',
-          data: smoothed,
-          borderColor: '#8b5cf6',
-          backgroundColor: 'rgba(139,92,246,0.08)',
-          tension: 0.4,
-          pointRadius: 0,
-          pointHoverRadius: 3,
-          fill: false,
-          borderWidth: 2,
-        });
-        kalmanDatasetIndex = chart.data.datasets.length - 1;
-        kalmanVisible = true;
-        chart.update('none');
-        btn.style.opacity = '1';
-        btn.classList.replace('btn-outline-secondary', 'btn-secondary');
-      } else {
-        kalmanVisible = !kalmanVisible;
-        chart.setDatasetVisibility(kalmanDatasetIndex, kalmanVisible);
-        chart.update('none');
-        btn.style.opacity = kalmanVisible ? '1' : '0.4';
-        if (kalmanVisible) {
-          btn.classList.replace('btn-outline-secondary', 'btn-secondary');
-        } else {
-          btn.classList.replace('btn-secondary', 'btn-outline-secondary');
-        }
-      }
-    }
-    window.toggleKalman = toggleKalman;
-    <?php endif; // kalmanVars && !hasDbFiltered ?>
 
     // Exportações
     function baixar() {
