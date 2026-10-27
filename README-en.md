@@ -217,12 +217,12 @@ for the full licensing rationale and dependency compatibility audit.
 
 If you use SAPI, its data, or its codebase in academic work, please cite:
 
-> NUERNBERG, Alexandre. *Desenvolvimento e Validação do SAPI: Um Sistema
-> Integrado de Monitoramento, Alerta e Predição de Inundações*. Dissertação
-> (Mestrado) — Instituto Federal de Santa Catarina (IFSC), Programa de
-> Pós-Graduação em Clima e Ambiente. Florianópolis, 2026. Defesa a ser
-> agendada — verifique as [Releases](#releases) deste repositório para a
-> versão do código associada à versão final do trabalho.
+> NUERNBERG, Alexandre. *Desenvolvimento de um Sistema de Monitoramento, Predição e Alerta de Inundações*. 2026.
+> Dissertação (Mestrado Profissional em Clima e Ambiente) — Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina,
+> Florianópolis, 2026.
+>
+> Defense on 29 Oct 2026. Check this repository's [Releases](#releases) for the code
+> version associated with the final version of the work.
 
 Machine-readable citation metadata is in [`CITATION.cff`](CITATION.cff) (GitHub shows it as *Cite this repository*).
 

@@ -222,11 +222,11 @@ dependências.
 
 Se você usar o SAPI, seus dados ou seu código em trabalhos acadêmicos, por favor cite:
 
-> NUERNBERG, Alexandre. *Desenvolvimento e Validação do SAPI: Um Sistema
-> Integrado de Monitoramento, Alerta e Predição de Inundações*. Dissertação
-> (Mestrado) — Instituto Federal de Santa Catarina (IFSC), Programa de
-> Pós-Graduação em Clima e Ambiente. Florianópolis, 2026. Defesa a ser
-> agendada — verifique as [Releases](#releases) deste repositório para a
+> NUERNBERG, Alexandre. *Desenvolvimento de um Sistema de Monitoramento, Predição e Alerta de Inundações*. 2026.
+> Dissertação (Mestrado Profissional em Clima e Ambiente) — Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina,
+> Florianópolis, 2026.
+>
+> Defesa em 29/10/2026. Verifique as [Releases](#releases) deste repositório para a
 > versão do código associada à versão final do trabalho.
 
 Os metadados de citação legíveis por máquina estão em [`CITATION.cff`](CITATION.cff) (o GitHub os mostra como *Cite this repository*).

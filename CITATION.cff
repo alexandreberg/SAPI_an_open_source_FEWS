@@ -29,13 +29,13 @@ keywords:
 preferred-citation:
   type: thesis
   thesis-type: "Master's dissertation"
-  title: "Desenvolvimento e Validação do SAPI: Um Sistema Integrado de Monitoramento, Alerta e Predição de Inundações"
+  title: "Desenvolvimento de um Sistema de Monitoramento, Predição e Alerta de Inundações"
   authors:
     - family-names: Nuernberg
       given-names: Alexandre
       orcid: "https://orcid.org/0009-0005-7618-4269"
   institution:
-    name: "Instituto Federal de Santa Catarina (IFSC), Programa de Pós-Graduação em Clima e Ambiente"
+    name: "Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina (IFSC), Mestrado Profissional em Clima e Ambiente"
     city: Florianópolis
     country: BR
   year: 2026
